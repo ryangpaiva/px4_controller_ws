@@ -91,6 +91,7 @@
     "/home/ryangpaiva/px4_minimal_ws/src/px4_msgs:msg/LoggerStatus.msg",
     "/home/ryangpaiva/px4_minimal_ws/src/px4_msgs:msg/MagWorkerData.msg",
     "/home/ryangpaiva/px4_minimal_ws/src/px4_msgs:msg/MagnetometerBiasEstimate.msg",
+    "/home/ryangpaiva/px4_minimal_ws/src/px4_msgs:msg/ManualControlSetpoint.msg",
     "/home/ryangpaiva/px4_minimal_ws/src/px4_msgs:msg/ManualControlSwitches.msg",
     "/home/ryangpaiva/px4_minimal_ws/src/px4_msgs:msg/MavlinkLog.msg",
     "/home/ryangpaiva/px4_minimal_ws/src/px4_msgs:msg/MavlinkTunnel.msg",

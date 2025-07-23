@@ -472,6 +472,9 @@ CMakeFiles/px4_msgs__rosidl_typesupport_introspection_c__pyext.dir/rosidl_genera
  /home/ryangpaiva/px4_minimal_ws/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/magnetometer_bias_estimate__type_support.h \
  /home/ryangpaiva/px4_minimal_ws/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/magnetometer_bias_estimate__struct.h \
  /home/ryangpaiva/px4_minimal_ws/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/magnetometer_bias_estimate__functions.h \
+ /home/ryangpaiva/px4_minimal_ws/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/manual_control_setpoint__type_support.h \
+ /home/ryangpaiva/px4_minimal_ws/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/manual_control_setpoint__struct.h \
+ /home/ryangpaiva/px4_minimal_ws/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/manual_control_setpoint__functions.h \
  /home/ryangpaiva/px4_minimal_ws/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/manual_control_switches__type_support.h \
  /home/ryangpaiva/px4_minimal_ws/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/manual_control_switches__struct.h \
  /home/ryangpaiva/px4_minimal_ws/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/manual_control_switches__functions.h \

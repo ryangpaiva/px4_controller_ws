@@ -88,6 +88,7 @@
 /home/ryangpaiva/px4_minimal_ws/build/px4_msgs/rosidl_adapter/px4_msgs:msg/LoggerStatus.idl
 /home/ryangpaiva/px4_minimal_ws/build/px4_msgs/rosidl_adapter/px4_msgs:msg/MagWorkerData.idl
 /home/ryangpaiva/px4_minimal_ws/build/px4_msgs/rosidl_adapter/px4_msgs:msg/MagnetometerBiasEstimate.idl
+/home/ryangpaiva/px4_minimal_ws/build/px4_msgs/rosidl_adapter/px4_msgs:msg/ManualControlSetpoint.idl
 /home/ryangpaiva/px4_minimal_ws/build/px4_msgs/rosidl_adapter/px4_msgs:msg/ManualControlSwitches.idl
 /home/ryangpaiva/px4_minimal_ws/build/px4_msgs/rosidl_adapter/px4_msgs:msg/MavlinkLog.idl
 /home/ryangpaiva/px4_minimal_ws/build/px4_msgs/rosidl_adapter/px4_msgs:msg/MavlinkTunnel.idl

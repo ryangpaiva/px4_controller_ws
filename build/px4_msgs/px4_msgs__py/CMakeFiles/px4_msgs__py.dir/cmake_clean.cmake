@@ -183,6 +183,8 @@ file(REMOVE_RECURSE
   "../rosidl_generator_py/px4_msgs/msg/_mag_worker_data_s.c"
   "../rosidl_generator_py/px4_msgs/msg/_magnetometer_bias_estimate.py"
   "../rosidl_generator_py/px4_msgs/msg/_magnetometer_bias_estimate_s.c"
+  "../rosidl_generator_py/px4_msgs/msg/_manual_control_setpoint.py"
+  "../rosidl_generator_py/px4_msgs/msg/_manual_control_setpoint_s.c"
   "../rosidl_generator_py/px4_msgs/msg/_manual_control_switches.py"
   "../rosidl_generator_py/px4_msgs/msg/_manual_control_switches_s.c"
   "../rosidl_generator_py/px4_msgs/msg/_mavlink_log.py"

@@ -159,6 +159,7 @@ px4_msgs__py/CMakeFiles/px4_msgs__py: rosidl_generator_py/px4_msgs/msg/_log_mess
 px4_msgs__py/CMakeFiles/px4_msgs__py: rosidl_generator_py/px4_msgs/msg/_logger_status.py
 px4_msgs__py/CMakeFiles/px4_msgs__py: rosidl_generator_py/px4_msgs/msg/_mag_worker_data.py
 px4_msgs__py/CMakeFiles/px4_msgs__py: rosidl_generator_py/px4_msgs/msg/_magnetometer_bias_estimate.py
+px4_msgs__py/CMakeFiles/px4_msgs__py: rosidl_generator_py/px4_msgs/msg/_manual_control_setpoint.py
 px4_msgs__py/CMakeFiles/px4_msgs__py: rosidl_generator_py/px4_msgs/msg/_manual_control_switches.py
 px4_msgs__py/CMakeFiles/px4_msgs__py: rosidl_generator_py/px4_msgs/msg/_mavlink_log.py
 px4_msgs__py/CMakeFiles/px4_msgs__py: rosidl_generator_py/px4_msgs/msg/_mavlink_tunnel.py
@@ -368,6 +369,7 @@ px4_msgs__py/CMakeFiles/px4_msgs__py: rosidl_generator_py/px4_msgs/msg/_log_mess
 px4_msgs__py/CMakeFiles/px4_msgs__py: rosidl_generator_py/px4_msgs/msg/_logger_status_s.c
 px4_msgs__py/CMakeFiles/px4_msgs__py: rosidl_generator_py/px4_msgs/msg/_mag_worker_data_s.c
 px4_msgs__py/CMakeFiles/px4_msgs__py: rosidl_generator_py/px4_msgs/msg/_magnetometer_bias_estimate_s.c
+px4_msgs__py/CMakeFiles/px4_msgs__py: rosidl_generator_py/px4_msgs/msg/_manual_control_setpoint_s.c
 px4_msgs__py/CMakeFiles/px4_msgs__py: rosidl_generator_py/px4_msgs/msg/_manual_control_switches_s.c
 px4_msgs__py/CMakeFiles/px4_msgs__py: rosidl_generator_py/px4_msgs/msg/_mavlink_log_s.c
 px4_msgs__py/CMakeFiles/px4_msgs__py: rosidl_generator_py/px4_msgs/msg/_mavlink_tunnel_s.c
@@ -590,6 +592,7 @@ rosidl_generator_py/px4_msgs/_px4_msgs_s.ep.rosidl_typesupport_fastrtps_c.c: ros
 rosidl_generator_py/px4_msgs/_px4_msgs_s.ep.rosidl_typesupport_fastrtps_c.c: rosidl_adapter/px4_msgs/msg/LoggerStatus.idl
 rosidl_generator_py/px4_msgs/_px4_msgs_s.ep.rosidl_typesupport_fastrtps_c.c: rosidl_adapter/px4_msgs/msg/MagWorkerData.idl
 rosidl_generator_py/px4_msgs/_px4_msgs_s.ep.rosidl_typesupport_fastrtps_c.c: rosidl_adapter/px4_msgs/msg/MagnetometerBiasEstimate.idl
+rosidl_generator_py/px4_msgs/_px4_msgs_s.ep.rosidl_typesupport_fastrtps_c.c: rosidl_adapter/px4_msgs/msg/ManualControlSetpoint.idl
 rosidl_generator_py/px4_msgs/_px4_msgs_s.ep.rosidl_typesupport_fastrtps_c.c: rosidl_adapter/px4_msgs/msg/ManualControlSwitches.idl
 rosidl_generator_py/px4_msgs/_px4_msgs_s.ep.rosidl_typesupport_fastrtps_c.c: rosidl_adapter/px4_msgs/msg/MavlinkLog.idl
 rosidl_generator_py/px4_msgs/_px4_msgs_s.ep.rosidl_typesupport_fastrtps_c.c: rosidl_adapter/px4_msgs/msg/MavlinkTunnel.idl
@@ -988,6 +991,9 @@ rosidl_generator_py/px4_msgs/msg/_mag_worker_data.py: rosidl_generator_py/px4_ms
 
 rosidl_generator_py/px4_msgs/msg/_magnetometer_bias_estimate.py: rosidl_generator_py/px4_msgs/_px4_msgs_s.ep.rosidl_typesupport_fastrtps_c.c
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_py/px4_msgs/msg/_magnetometer_bias_estimate.py
+
+rosidl_generator_py/px4_msgs/msg/_manual_control_setpoint.py: rosidl_generator_py/px4_msgs/_px4_msgs_s.ep.rosidl_typesupport_fastrtps_c.c
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_py/px4_msgs/msg/_manual_control_setpoint.py
 
 rosidl_generator_py/px4_msgs/msg/_manual_control_switches.py: rosidl_generator_py/px4_msgs/_px4_msgs_s.ep.rosidl_typesupport_fastrtps_c.c
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_py/px4_msgs/msg/_manual_control_switches.py
@@ -1616,6 +1622,9 @@ rosidl_generator_py/px4_msgs/msg/_mag_worker_data_s.c: rosidl_generator_py/px4_m
 rosidl_generator_py/px4_msgs/msg/_magnetometer_bias_estimate_s.c: rosidl_generator_py/px4_msgs/_px4_msgs_s.ep.rosidl_typesupport_fastrtps_c.c
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_py/px4_msgs/msg/_magnetometer_bias_estimate_s.c
 
+rosidl_generator_py/px4_msgs/msg/_manual_control_setpoint_s.c: rosidl_generator_py/px4_msgs/_px4_msgs_s.ep.rosidl_typesupport_fastrtps_c.c
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_py/px4_msgs/msg/_manual_control_setpoint_s.c
+
 rosidl_generator_py/px4_msgs/msg/_manual_control_switches_s.c: rosidl_generator_py/px4_msgs/_px4_msgs_s.ep.rosidl_typesupport_fastrtps_c.c
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_py/px4_msgs/msg/_manual_control_switches_s.c
 
@@ -2155,6 +2164,8 @@ px4_msgs__py: rosidl_generator_py/px4_msgs/msg/_mag_worker_data.py
 px4_msgs__py: rosidl_generator_py/px4_msgs/msg/_mag_worker_data_s.c
 px4_msgs__py: rosidl_generator_py/px4_msgs/msg/_magnetometer_bias_estimate.py
 px4_msgs__py: rosidl_generator_py/px4_msgs/msg/_magnetometer_bias_estimate_s.c
+px4_msgs__py: rosidl_generator_py/px4_msgs/msg/_manual_control_setpoint.py
+px4_msgs__py: rosidl_generator_py/px4_msgs/msg/_manual_control_setpoint_s.c
 px4_msgs__py: rosidl_generator_py/px4_msgs/msg/_manual_control_switches.py
 px4_msgs__py: rosidl_generator_py/px4_msgs/msg/_manual_control_switches_s.c
 px4_msgs__py: rosidl_generator_py/px4_msgs/msg/_mavlink_log.py

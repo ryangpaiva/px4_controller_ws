@@ -88,6 +88,7 @@ from px4_msgs.msg._log_message import LogMessage  # noqa: F401
 from px4_msgs.msg._logger_status import LoggerStatus  # noqa: F401
 from px4_msgs.msg._mag_worker_data import MagWorkerData  # noqa: F401
 from px4_msgs.msg._magnetometer_bias_estimate import MagnetometerBiasEstimate  # noqa: F401
+from px4_msgs.msg._manual_control_setpoint import ManualControlSetpoint  # noqa: F401
 from px4_msgs.msg._manual_control_switches import ManualControlSwitches  # noqa: F401
 from px4_msgs.msg._mavlink_log import MavlinkLog  # noqa: F401
 from px4_msgs.msg._mavlink_tunnel import MavlinkTunnel  # noqa: F401

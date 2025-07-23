@@ -178,6 +178,8 @@ msg/MagWorkerData.idl
 msg/MagWorkerData.msg
 msg/MagnetometerBiasEstimate.idl
 msg/MagnetometerBiasEstimate.msg
+msg/ManualControlSetpoint.idl
+msg/ManualControlSetpoint.msg
 msg/ManualControlSwitches.idl
 msg/ManualControlSwitches.msg
 msg/MavlinkLog.idl

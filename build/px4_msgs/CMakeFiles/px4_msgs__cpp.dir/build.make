@@ -516,6 +516,11 @@ CMakeFiles/px4_msgs__cpp: rosidl_generator_cpp/px4_msgs/msg/detail/magnetometer_
 CMakeFiles/px4_msgs__cpp: rosidl_generator_cpp/px4_msgs/msg/detail/magnetometer_bias_estimate__struct.hpp
 CMakeFiles/px4_msgs__cpp: rosidl_generator_cpp/px4_msgs/msg/detail/magnetometer_bias_estimate__traits.hpp
 CMakeFiles/px4_msgs__cpp: rosidl_generator_cpp/px4_msgs/msg/detail/magnetometer_bias_estimate__type_support.hpp
+CMakeFiles/px4_msgs__cpp: rosidl_generator_cpp/px4_msgs/msg/manual_control_setpoint.hpp
+CMakeFiles/px4_msgs__cpp: rosidl_generator_cpp/px4_msgs/msg/detail/manual_control_setpoint__builder.hpp
+CMakeFiles/px4_msgs__cpp: rosidl_generator_cpp/px4_msgs/msg/detail/manual_control_setpoint__struct.hpp
+CMakeFiles/px4_msgs__cpp: rosidl_generator_cpp/px4_msgs/msg/detail/manual_control_setpoint__traits.hpp
+CMakeFiles/px4_msgs__cpp: rosidl_generator_cpp/px4_msgs/msg/detail/manual_control_setpoint__type_support.hpp
 CMakeFiles/px4_msgs__cpp: rosidl_generator_cpp/px4_msgs/msg/manual_control_switches.hpp
 CMakeFiles/px4_msgs__cpp: rosidl_generator_cpp/px4_msgs/msg/detail/manual_control_switches__builder.hpp
 CMakeFiles/px4_msgs__cpp: rosidl_generator_cpp/px4_msgs/msg/detail/manual_control_switches__struct.hpp
@@ -1213,6 +1218,7 @@ rosidl_generator_cpp/px4_msgs/msg/action_request.hpp: rosidl_adapter/px4_msgs/ms
 rosidl_generator_cpp/px4_msgs/msg/action_request.hpp: rosidl_adapter/px4_msgs/msg/LoggerStatus.idl
 rosidl_generator_cpp/px4_msgs/msg/action_request.hpp: rosidl_adapter/px4_msgs/msg/MagWorkerData.idl
 rosidl_generator_cpp/px4_msgs/msg/action_request.hpp: rosidl_adapter/px4_msgs/msg/MagnetometerBiasEstimate.idl
+rosidl_generator_cpp/px4_msgs/msg/action_request.hpp: rosidl_adapter/px4_msgs/msg/ManualControlSetpoint.idl
 rosidl_generator_cpp/px4_msgs/msg/action_request.hpp: rosidl_adapter/px4_msgs/msg/ManualControlSwitches.idl
 rosidl_generator_cpp/px4_msgs/msg/action_request.hpp: rosidl_adapter/px4_msgs/msg/MavlinkLog.idl
 rosidl_generator_cpp/px4_msgs/msg/action_request.hpp: rosidl_adapter/px4_msgs/msg/MavlinkTunnel.idl
@@ -2682,6 +2688,21 @@ rosidl_generator_cpp/px4_msgs/msg/detail/magnetometer_bias_estimate__traits.hpp:
 
 rosidl_generator_cpp/px4_msgs/msg/detail/magnetometer_bias_estimate__type_support.hpp: rosidl_generator_cpp/px4_msgs/msg/action_request.hpp
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/px4_msgs/msg/detail/magnetometer_bias_estimate__type_support.hpp
+
+rosidl_generator_cpp/px4_msgs/msg/manual_control_setpoint.hpp: rosidl_generator_cpp/px4_msgs/msg/action_request.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/px4_msgs/msg/manual_control_setpoint.hpp
+
+rosidl_generator_cpp/px4_msgs/msg/detail/manual_control_setpoint__builder.hpp: rosidl_generator_cpp/px4_msgs/msg/action_request.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/px4_msgs/msg/detail/manual_control_setpoint__builder.hpp
+
+rosidl_generator_cpp/px4_msgs/msg/detail/manual_control_setpoint__struct.hpp: rosidl_generator_cpp/px4_msgs/msg/action_request.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/px4_msgs/msg/detail/manual_control_setpoint__struct.hpp
+
+rosidl_generator_cpp/px4_msgs/msg/detail/manual_control_setpoint__traits.hpp: rosidl_generator_cpp/px4_msgs/msg/action_request.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/px4_msgs/msg/detail/manual_control_setpoint__traits.hpp
+
+rosidl_generator_cpp/px4_msgs/msg/detail/manual_control_setpoint__type_support.hpp: rosidl_generator_cpp/px4_msgs/msg/action_request.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/px4_msgs/msg/detail/manual_control_setpoint__type_support.hpp
 
 rosidl_generator_cpp/px4_msgs/msg/manual_control_switches.hpp: rosidl_generator_cpp/px4_msgs/msg/action_request.hpp
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/px4_msgs/msg/manual_control_switches.hpp
@@ -4841,6 +4862,10 @@ px4_msgs__cpp: rosidl_generator_cpp/px4_msgs/msg/detail/magnetometer_bias_estima
 px4_msgs__cpp: rosidl_generator_cpp/px4_msgs/msg/detail/magnetometer_bias_estimate__struct.hpp
 px4_msgs__cpp: rosidl_generator_cpp/px4_msgs/msg/detail/magnetometer_bias_estimate__traits.hpp
 px4_msgs__cpp: rosidl_generator_cpp/px4_msgs/msg/detail/magnetometer_bias_estimate__type_support.hpp
+px4_msgs__cpp: rosidl_generator_cpp/px4_msgs/msg/detail/manual_control_setpoint__builder.hpp
+px4_msgs__cpp: rosidl_generator_cpp/px4_msgs/msg/detail/manual_control_setpoint__struct.hpp
+px4_msgs__cpp: rosidl_generator_cpp/px4_msgs/msg/detail/manual_control_setpoint__traits.hpp
+px4_msgs__cpp: rosidl_generator_cpp/px4_msgs/msg/detail/manual_control_setpoint__type_support.hpp
 px4_msgs__cpp: rosidl_generator_cpp/px4_msgs/msg/detail/manual_control_switches__builder.hpp
 px4_msgs__cpp: rosidl_generator_cpp/px4_msgs/msg/detail/manual_control_switches__struct.hpp
 px4_msgs__cpp: rosidl_generator_cpp/px4_msgs/msg/detail/manual_control_switches__traits.hpp
@@ -5376,6 +5401,7 @@ px4_msgs__cpp: rosidl_generator_cpp/px4_msgs/msg/log_message.hpp
 px4_msgs__cpp: rosidl_generator_cpp/px4_msgs/msg/logger_status.hpp
 px4_msgs__cpp: rosidl_generator_cpp/px4_msgs/msg/mag_worker_data.hpp
 px4_msgs__cpp: rosidl_generator_cpp/px4_msgs/msg/magnetometer_bias_estimate.hpp
+px4_msgs__cpp: rosidl_generator_cpp/px4_msgs/msg/manual_control_setpoint.hpp
 px4_msgs__cpp: rosidl_generator_cpp/px4_msgs/msg/manual_control_switches.hpp
 px4_msgs__cpp: rosidl_generator_cpp/px4_msgs/msg/mavlink_log.hpp
 px4_msgs__cpp: rosidl_generator_cpp/px4_msgs/msg/mavlink_tunnel.hpp

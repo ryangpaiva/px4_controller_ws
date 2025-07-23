@@ -156,6 +156,7 @@ CMakeFiles/px4_msgs: /home/ryangpaiva/px4_minimal_ws/src/px4_msgs/msg/LogMessage
 CMakeFiles/px4_msgs: /home/ryangpaiva/px4_minimal_ws/src/px4_msgs/msg/LoggerStatus.msg
 CMakeFiles/px4_msgs: /home/ryangpaiva/px4_minimal_ws/src/px4_msgs/msg/MagWorkerData.msg
 CMakeFiles/px4_msgs: /home/ryangpaiva/px4_minimal_ws/src/px4_msgs/msg/MagnetometerBiasEstimate.msg
+CMakeFiles/px4_msgs: /home/ryangpaiva/px4_minimal_ws/src/px4_msgs/msg/ManualControlSetpoint.msg
 CMakeFiles/px4_msgs: /home/ryangpaiva/px4_minimal_ws/src/px4_msgs/msg/ManualControlSwitches.msg
 CMakeFiles/px4_msgs: /home/ryangpaiva/px4_minimal_ws/src/px4_msgs/msg/MavlinkLog.msg
 CMakeFiles/px4_msgs: /home/ryangpaiva/px4_minimal_ws/src/px4_msgs/msg/MavlinkTunnel.msg

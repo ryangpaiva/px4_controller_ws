@@ -3,7 +3,7 @@
 import rclpy
 from rclpy.node import Node
 from rclpy.qos import QoSProfile, ReliabilityPolicy, HistoryPolicy, DurabilityPolicy
-from px4_msgs.msg import OffboardControlMode, VehicleCommand, VehicleAttitudeSetpoint
+from px4_msgs.msg import OffboardControlMode, VehicleCommand, VehicleAttitudeSetpoint, ManualControlSetpoint
 import math
 
 
@@ -29,8 +29,15 @@ class OffboardControl(Node):
         self.vehicle_command_publisher = self.create_publisher(
             VehicleCommand, '/fmu/in/vehicle_command', qos_profile)
 
+        # Create subscriber for RC input
+        self.manual_control_subscriber = self.create_subscription(
+            ManualControlSetpoint, '/fmu/out/manual_control_setpoint', 
+            self.manual_control_callback, qos_profile)
+
         # Initialize variables
         self.offboard_setpoint_counter = 0
+        self.rc_thrust = 0.6  # Default thrust
+        self.rc_connected = False
 
         # Create a timer to publish control commands
         self.timer = self.create_timer(0.1, self.timer_callback)
@@ -52,6 +59,18 @@ class OffboardControl(Node):
         self.publish_vehicle_command(
             VehicleCommand.VEHICLE_CMD_DO_SET_MODE, param1=1.0, param2=6.0)
         self.get_logger().info("Switching to offboard mode")
+
+    def manual_control_callback(self, msg):
+        """Callback for RC input - extract throttle for thrust control."""
+        # Convert RC throttle to thrust (0 to 1)
+        # msg.throttle is typically -1 to 1, where -1 is minimum and 1 is maximum
+        self.rc_thrust = max(0.0, min(1.0, (msg.throttle + 1.0) / 2.0))  # Convert -1:1 to 0:1
+        self.rc_connected = True
+        
+        # Log throttle changes (optional, can be removed if too verbose)
+        if hasattr(self, '_last_thrust') and abs(self.rc_thrust - self._last_thrust) > 0.05:
+            self.get_logger().info(f"RC Throttle: {msg.throttle:.2f} -> Thrust: {self.rc_thrust:.2f}")
+            self._last_thrust = self.rc_thrust
 
     def publish_offboard_control_heartbeat_signal(self):
         """Publish the offboard control mode."""
@@ -118,8 +137,11 @@ class OffboardControl(Node):
         """Callback function for the timer."""
         self.publish_offboard_control_heartbeat_signal()
         
-        # Publish attitude setpoint - hovering with level attitude
-        self.publish_attitude_setpoint(0.0, 0.0, 0.0, 0.6)  # Level attitude, 60% thrust
+        # Use RC thrust if available, otherwise default
+        thrust = self.rc_thrust if self.rc_connected else 0.6
+        
+        # Publish attitude setpoint with RC-controlled thrust
+        self.publish_attitude_setpoint(0.0, 0.0, 0.0, thrust)
 
         if self.offboard_setpoint_counter == 10:
             self.engage_offboard_mode()
