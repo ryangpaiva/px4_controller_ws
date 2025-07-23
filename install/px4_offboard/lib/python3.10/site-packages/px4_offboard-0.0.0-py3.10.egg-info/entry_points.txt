@@ -1,0 +1,3 @@
+[console_scripts]
+offboard_node = px4_offboard.offboard_node:main
+
