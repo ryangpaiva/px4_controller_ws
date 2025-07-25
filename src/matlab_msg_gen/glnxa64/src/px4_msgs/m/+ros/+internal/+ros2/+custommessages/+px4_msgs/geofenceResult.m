@@ -1,0 +1,34 @@
+function [data, info] = geofenceResult
+%GeofenceResult gives an empty data for px4_msgs/GeofenceResult
+% Copyright 2019-2021 The MathWorks, Inc.
+data = struct();
+data.MessageType = 'px4_msgs/GeofenceResult';
+[data.timestamp, info.timestamp] = ros.internal.ros2.messages.ros2.default_type('uint64',1,0);
+[data.GF_ACTION_NONE, info.GF_ACTION_NONE] = ros.internal.ros2.messages.ros2.default_type('uint8',1,0, 0, [NaN]);
+[data.GF_ACTION_WARN, info.GF_ACTION_WARN] = ros.internal.ros2.messages.ros2.default_type('uint8',1,0, 1, [NaN]);
+[data.GF_ACTION_LOITER, info.GF_ACTION_LOITER] = ros.internal.ros2.messages.ros2.default_type('uint8',1,0, 2, [NaN]);
+[data.GF_ACTION_RTL, info.GF_ACTION_RTL] = ros.internal.ros2.messages.ros2.default_type('uint8',1,0, 3, [NaN]);
+[data.GF_ACTION_TERMINATE, info.GF_ACTION_TERMINATE] = ros.internal.ros2.messages.ros2.default_type('uint8',1,0, 4, [NaN]);
+[data.GF_ACTION_LAND, info.GF_ACTION_LAND] = ros.internal.ros2.messages.ros2.default_type('uint8',1,0, 5, [NaN]);
+[data.geofence_max_dist_triggered, info.geofence_max_dist_triggered] = ros.internal.ros2.messages.ros2.default_type('logical',1,0);
+[data.geofence_max_alt_triggered, info.geofence_max_alt_triggered] = ros.internal.ros2.messages.ros2.default_type('logical',1,0);
+[data.geofence_custom_fence_triggered, info.geofence_custom_fence_triggered] = ros.internal.ros2.messages.ros2.default_type('logical',1,0);
+[data.geofence_action, info.geofence_action] = ros.internal.ros2.messages.ros2.default_type('uint8',1,0);
+info.MessageType = 'px4_msgs/GeofenceResult';
+info.constant = 0;
+info.default = 0;
+info.maxstrlen = NaN;
+info.MaxLen = 1;
+info.MinLen = 1;
+info.MatPath = cell(1,11);
+info.MatPath{1} = 'timestamp';
+info.MatPath{2} = 'GF_ACTION_NONE';
+info.MatPath{3} = 'GF_ACTION_WARN';
+info.MatPath{4} = 'GF_ACTION_LOITER';
+info.MatPath{5} = 'GF_ACTION_RTL';
+info.MatPath{6} = 'GF_ACTION_TERMINATE';
+info.MatPath{7} = 'GF_ACTION_LAND';
+info.MatPath{8} = 'geofence_max_dist_triggered';
+info.MatPath{9} = 'geofence_max_alt_triggered';
+info.MatPath{10} = 'geofence_custom_fence_triggered';
+info.MatPath{11} = 'geofence_action';

@@ -1,0 +1,30 @@
+function [data, info] = takeoffStatus
+%TakeoffStatus gives an empty data for px4_msgs/TakeoffStatus
+% Copyright 2019-2021 The MathWorks, Inc.
+data = struct();
+data.MessageType = 'px4_msgs/TakeoffStatus';
+[data.timestamp, info.timestamp] = ros.internal.ros2.messages.ros2.default_type('uint64',1,0);
+[data.TAKEOFF_STATE_UNINITIALIZED, info.TAKEOFF_STATE_UNINITIALIZED] = ros.internal.ros2.messages.ros2.default_type('uint8',1,0, 0, [NaN]);
+[data.TAKEOFF_STATE_DISARMED, info.TAKEOFF_STATE_DISARMED] = ros.internal.ros2.messages.ros2.default_type('uint8',1,0, 1, [NaN]);
+[data.TAKEOFF_STATE_SPOOLUP, info.TAKEOFF_STATE_SPOOLUP] = ros.internal.ros2.messages.ros2.default_type('uint8',1,0, 2, [NaN]);
+[data.TAKEOFF_STATE_READY_FOR_TAKEOFF, info.TAKEOFF_STATE_READY_FOR_TAKEOFF] = ros.internal.ros2.messages.ros2.default_type('uint8',1,0, 3, [NaN]);
+[data.TAKEOFF_STATE_RAMPUP, info.TAKEOFF_STATE_RAMPUP] = ros.internal.ros2.messages.ros2.default_type('uint8',1,0, 4, [NaN]);
+[data.TAKEOFF_STATE_FLIGHT, info.TAKEOFF_STATE_FLIGHT] = ros.internal.ros2.messages.ros2.default_type('uint8',1,0, 5, [NaN]);
+[data.takeoff_state, info.takeoff_state] = ros.internal.ros2.messages.ros2.default_type('uint8',1,0);
+[data.tilt_limit, info.tilt_limit] = ros.internal.ros2.messages.ros2.default_type('single',1,0);
+info.MessageType = 'px4_msgs/TakeoffStatus';
+info.constant = 0;
+info.default = 0;
+info.maxstrlen = NaN;
+info.MaxLen = 1;
+info.MinLen = 1;
+info.MatPath = cell(1,9);
+info.MatPath{1} = 'timestamp';
+info.MatPath{2} = 'TAKEOFF_STATE_UNINITIALIZED';
+info.MatPath{3} = 'TAKEOFF_STATE_DISARMED';
+info.MatPath{4} = 'TAKEOFF_STATE_SPOOLUP';
+info.MatPath{5} = 'TAKEOFF_STATE_READY_FOR_TAKEOFF';
+info.MatPath{6} = 'TAKEOFF_STATE_RAMPUP';
+info.MatPath{7} = 'TAKEOFF_STATE_FLIGHT';
+info.MatPath{8} = 'takeoff_state';
+info.MatPath{9} = 'tilt_limit';

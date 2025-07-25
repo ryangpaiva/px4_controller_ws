@@ -1,0 +1,580 @@
+cmake_minimum_required(VERSION 3.5)
+project(px4_msgs)
+set(CMAKE_VERBOSE_MAKEFILE ON)
+# Set CMAKE_BUILD_TYPE
+set(CMAKE_BUILD_TYPE Release)
+# Default to C99
+if(NOT CMAKE_C_STANDARD)
+  set(CMAKE_C_STANDARD 99)
+endif()
+# Default to C++17
+if(NOT CMAKE_CXX_STANDARD)
+  set(CMAKE_CXX_STANDARD 17)
+endif()
+if(ALIAS_ROS2_TF2)
+  add_definitions(-Dtf2=ros2_tf2)
+  add_definitions(-Dtf2_ros=ros2_tf2_ros)
+  add_definitions(-Dmessage_filters=ros2_message_filters)
+endif()
+# Check the ROS 2 distribution and define a macro
+if("$ENV{ROS_DISTRO}" STREQUAL "humble")
+    message(STATUS "Building for ROS 2 Humble")
+    add_definitions(-DROS2_DISTRO_HUMBLE)
+elseif("$ENV{ROS_DISTRO}" STREQUAL "jazzy")
+    message(STATUS "Building for ROS 2 Jazzy")
+    add_definitions(-DROS2_DISTRO_JAZZY)
+else()
+    message(WARNING "ROS 2 distribution $ENV{ROS_DISTRO} is not recommended for this MATLAB version. Use 'ROS 2 Jazzy' for this MATLAB version.")
+    message(WARNING "Building for ROS 2 Jazzy")
+    add_definitions(-DROS2_DISTRO_JAZZY)
+endif()
+# find dependencies
+find_package(ament_cmake REQUIRED)
+find_package(ament_cmake_ros REQUIRED)
+find_package(rosidl_typesupport_c REQUIRED)
+find_package(rosidl_typesupport_cpp REQUIRED)
+find_package(rosidl_default_generators REQUIRED)
+find_package( class_loader REQUIRED)
+find_package( console_bridge REQUIRED)
+find_package( rclcpp REQUIRED)
+find_package( rcutils REQUIRED)
+# Add package include directories
+include_directories("${CMAKE_CURRENT_SOURCE_DIR}/include/px4_msgs")
+include_directories("/usr/local/MATLAB/R2025a/extern/include")
+include_directories("/usr/local/MATLAB/R2025a/extern/include/MatlabDataArray")
+include_directories("/usr/local/MATLAB/R2025a/toolbox/ros/include/ros2")
+set (CMAKE_SKIP_BUILD_RPATH false)
+set (CMAKE_BUILD_WITH_INSTALL_RPATH true)
+set (CMAKE_INSTALL_RPATH "${CMAKE_INSTALL_PREFIX}/lib")
+set (CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
+set(msg_files
+  "msg/ActionRequest.msg"
+  "msg/ActuatorArmed.msg"
+  "msg/ActuatorControlsStatus.msg"
+  "msg/ActuatorMotors.msg"
+  "msg/ActuatorOutputs.msg"
+  "msg/ActuatorServos.msg"
+  "msg/ActuatorServosTrim.msg"
+  "msg/ActuatorTest.msg"
+  "msg/AdcReport.msg"
+  "msg/Airspeed.msg"
+  "msg/AirspeedValidated.msg"
+  "msg/AirspeedWind.msg"
+  "msg/ArmingCheckReply.msg"
+  "msg/ArmingCheckRequest.msg"
+  "msg/AutotuneAttitudeControlStatus.msg"
+  "msg/BatteryStatus.msg"
+  "msg/Buffer128.msg"
+  "msg/ButtonEvent.msg"
+  "msg/CameraCapture.msg"
+  "msg/CameraStatus.msg"
+  "msg/CameraTrigger.msg"
+  "msg/CanInterfaceStatus.msg"
+  "msg/CellularStatus.msg"
+  "msg/CollisionConstraints.msg"
+  "msg/ConfigOverrides.msg"
+  "msg/ControlAllocatorStatus.msg"
+  "msg/Cpuload.msg"
+  "msg/DatamanRequest.msg"
+  "msg/DatamanResponse.msg"
+  "msg/DebugArray.msg"
+  "msg/DebugKeyValue.msg"
+  "msg/DebugValue.msg"
+  "msg/DebugVect.msg"
+  "msg/DifferentialPressure.msg"
+  "msg/DistanceSensor.msg"
+  "msg/DistanceSensorModeChangeRequest.msg"
+  "msg/Ekf2Timestamps.msg"
+  "msg/EscReport.msg"
+  "msg/EscStatus.msg"
+  "msg/EstimatorAidSource1d.msg"
+  "msg/EstimatorAidSource2d.msg"
+  "msg/EstimatorAidSource3d.msg"
+  "msg/EstimatorBias.msg"
+  "msg/EstimatorBias3d.msg"
+  "msg/EstimatorEventFlags.msg"
+  "msg/EstimatorGpsStatus.msg"
+  "msg/EstimatorInnovations.msg"
+  "msg/EstimatorSelectorStatus.msg"
+  "msg/EstimatorSensorBias.msg"
+  "msg/EstimatorStates.msg"
+  "msg/EstimatorStatus.msg"
+  "msg/EstimatorStatusFlags.msg"
+  "msg/Event.msg"
+  "msg/FailsafeFlags.msg"
+  "msg/FailureDetectorStatus.msg"
+  "msg/FigureEightStatus.msg"
+  "msg/FlightPhaseEstimation.msg"
+  "msg/FollowTarget.msg"
+  "msg/FollowTargetEstimator.msg"
+  "msg/FollowTargetStatus.msg"
+  "msg/FuelTankStatus.msg"
+  "msg/GeneratorStatus.msg"
+  "msg/GeofenceResult.msg"
+  "msg/GeofenceStatus.msg"
+  "msg/GimbalControls.msg"
+  "msg/GimbalDeviceAttitudeStatus.msg"
+  "msg/GimbalDeviceInformation.msg"
+  "msg/GimbalDeviceSetAttitude.msg"
+  "msg/GimbalManagerInformation.msg"
+  "msg/GimbalManagerSetAttitude.msg"
+  "msg/GimbalManagerSetManualControl.msg"
+  "msg/GimbalManagerStatus.msg"
+  "msg/GotoSetpoint.msg"
+  "msg/GpioConfig.msg"
+  "msg/GpioIn.msg"
+  "msg/GpioOut.msg"
+  "msg/GpioRequest.msg"
+  "msg/GpsDump.msg"
+  "msg/GpsInjectData.msg"
+  "msg/Gripper.msg"
+  "msg/HealthReport.msg"
+  "msg/HeaterStatus.msg"
+  "msg/HomePosition.msg"
+  "msg/HoverThrustEstimate.msg"
+  "msg/InputRc.msg"
+  "msg/InternalCombustionEngineStatus.msg"
+  "msg/IridiumsbdStatus.msg"
+  "msg/IrlockReport.msg"
+  "msg/LandingGear.msg"
+  "msg/LandingGearWheel.msg"
+  "msg/LandingTargetInnovations.msg"
+  "msg/LandingTargetPose.msg"
+  "msg/LaunchDetectionStatus.msg"
+  "msg/LedControl.msg"
+  "msg/LogMessage.msg"
+  "msg/LoggerStatus.msg"
+  "msg/MagWorkerData.msg"
+  "msg/MagnetometerBiasEstimate.msg"
+  "msg/ManualControlSetpoint.msg"
+  "msg/ManualControlSwitches.msg"
+  "msg/MavlinkLog.msg"
+  "msg/MavlinkTunnel.msg"
+  "msg/MessageFormatRequest.msg"
+  "msg/MessageFormatResponse.msg"
+  "msg/Mission.msg"
+  "msg/MissionResult.msg"
+  "msg/ModeCompleted.msg"
+  "msg/MountOrientation.msg"
+  "msg/NavigatorMissionItem.msg"
+  "msg/NavigatorStatus.msg"
+  "msg/NormalizedUnsignedSetpoint.msg"
+  "msg/NpfgStatus.msg"
+  "msg/ObstacleDistance.msg"
+  "msg/OffboardControlMode.msg"
+  "msg/OnboardComputerStatus.msg"
+  "msg/OpenDroneIdArmStatus.msg"
+  "msg/OpenDroneIdOperatorId.msg"
+  "msg/OpenDroneIdSelfId.msg"
+  "msg/OpenDroneIdSystem.msg"
+  "msg/OrbTest.msg"
+  "msg/OrbTestLarge.msg"
+  "msg/OrbTestMedium.msg"
+  "msg/OrbitStatus.msg"
+  "msg/ParameterResetRequest.msg"
+  "msg/ParameterSetUsedRequest.msg"
+  "msg/ParameterSetValueRequest.msg"
+  "msg/ParameterSetValueResponse.msg"
+  "msg/ParameterUpdate.msg"
+  "msg/Ping.msg"
+  "msg/PositionControllerLandingStatus.msg"
+  "msg/PositionControllerStatus.msg"
+  "msg/PositionSetpoint.msg"
+  "msg/PositionSetpointTriplet.msg"
+  "msg/PowerButtonState.msg"
+  "msg/PowerMonitor.msg"
+  "msg/PpsCapture.msg"
+  "msg/PwmInput.msg"
+  "msg/Px4ioStatus.msg"
+  "msg/QshellReq.msg"
+  "msg/QshellRetval.msg"
+  "msg/RadioStatus.msg"
+  "msg/RateCtrlStatus.msg"
+  "msg/RcChannels.msg"
+  "msg/RcParameterMap.msg"
+  "msg/RegisterExtComponentReply.msg"
+  "msg/RegisterExtComponentRequest.msg"
+  "msg/RoverAckermannGuidanceStatus.msg"
+  "msg/RoverAckermannSetpoint.msg"
+  "msg/RoverAckermannStatus.msg"
+  "msg/RoverDifferentialGuidanceStatus.msg"
+  "msg/RoverDifferentialSetpoint.msg"
+  "msg/RoverDifferentialStatus.msg"
+  "msg/RoverMecanumGuidanceStatus.msg"
+  "msg/RoverMecanumSetpoint.msg"
+  "msg/RoverMecanumStatus.msg"
+  "msg/Rpm.msg"
+  "msg/RtlStatus.msg"
+  "msg/RtlTimeEstimate.msg"
+  "msg/SatelliteInfo.msg"
+  "msg/SensorAccel.msg"
+  "msg/SensorAccelFifo.msg"
+  "msg/SensorAirflow.msg"
+  "msg/SensorBaro.msg"
+  "msg/SensorCombined.msg"
+  "msg/SensorCorrection.msg"
+  "msg/SensorGnssRelative.msg"
+  "msg/SensorGps.msg"
+  "msg/SensorGyro.msg"
+  "msg/SensorGyroFft.msg"
+  "msg/SensorGyroFifo.msg"
+  "msg/SensorHygrometer.msg"
+  "msg/SensorMag.msg"
+  "msg/SensorOpticalFlow.msg"
+  "msg/SensorPreflightMag.msg"
+  "msg/SensorSelection.msg"
+  "msg/SensorUwb.msg"
+  "msg/SensorsStatus.msg"
+  "msg/SensorsStatusImu.msg"
+  "msg/SystemPower.msg"
+  "msg/TakeoffStatus.msg"
+  "msg/TaskStackInfo.msg"
+  "msg/TecsStatus.msg"
+  "msg/TelemetryStatus.msg"
+  "msg/TiltrotorExtraControls.msg"
+  "msg/TimesyncStatus.msg"
+  "msg/TrajectoryBezier.msg"
+  "msg/TrajectorySetpoint.msg"
+  "msg/TrajectoryWaypoint.msg"
+  "msg/TransponderReport.msg"
+  "msg/TuneControl.msg"
+  "msg/UavcanParameterRequest.msg"
+  "msg/UavcanParameterValue.msg"
+  "msg/UlogStream.msg"
+  "msg/UlogStreamAck.msg"
+  "msg/UnregisterExtComponent.msg"
+  "msg/VehicleAcceleration.msg"
+  "msg/VehicleAirData.msg"
+  "msg/VehicleAngularAccelerationSetpoint.msg"
+  "msg/VehicleAngularVelocity.msg"
+  "msg/VehicleAttitude.msg"
+  "msg/VehicleAttitudeSetpoint.msg"
+  "msg/VehicleCommand.msg"
+  "msg/VehicleCommandAck.msg"
+  "msg/VehicleConstraints.msg"
+  "msg/VehicleControlMode.msg"
+  "msg/VehicleGlobalPosition.msg"
+  "msg/VehicleImu.msg"
+  "msg/VehicleImuStatus.msg"
+  "msg/VehicleLandDetected.msg"
+  "msg/VehicleLocalPosition.msg"
+  "msg/VehicleLocalPositionSetpoint.msg"
+  "msg/VehicleMagnetometer.msg"
+  "msg/VehicleOdometry.msg"
+  "msg/VehicleOpticalFlow.msg"
+  "msg/VehicleOpticalFlowVel.msg"
+  "msg/VehicleRatesSetpoint.msg"
+  "msg/VehicleRoi.msg"
+  "msg/VehicleStatus.msg"
+  "msg/VehicleThrustSetpoint.msg"
+  "msg/VehicleTorqueSetpoint.msg"
+  "msg/VehicleTrajectoryBezier.msg"
+  "msg/VehicleTrajectoryWaypoint.msg"
+  "msg/VelocityLimits.msg"
+  "msg/VtolVehicleStatus.msg"
+  "msg/WheelEncoders.msg"
+  "msg/Wind.msg"
+  "msg/YawEstimatorStatus.msg"
+)
+set(srv_files
+)
+set(action_files
+)
+rosidl_generate_interfaces(${PROJECT_NAME}
+  ${msg_files}
+  ${srv_files}
+  ${action_files}
+)
+link_directories("/usr/local/MATLAB/R2025a/extern/bin/glnxa64")
+# Library
+add_library(
+    px4_msgs_matlab 
+    SHARED
+    src/px4_msgs_ActionRequest_message.cpp
+    src/px4_msgs_ActuatorArmed_message.cpp
+    src/px4_msgs_ActuatorControlsStatus_message.cpp
+    src/px4_msgs_ActuatorMotors_message.cpp
+    src/px4_msgs_ActuatorOutputs_message.cpp
+    src/px4_msgs_ActuatorServos_message.cpp
+    src/px4_msgs_ActuatorServosTrim_message.cpp
+    src/px4_msgs_ActuatorTest_message.cpp
+    src/px4_msgs_AdcReport_message.cpp
+    src/px4_msgs_Airspeed_message.cpp
+    src/px4_msgs_AirspeedValidated_message.cpp
+    src/px4_msgs_AirspeedWind_message.cpp
+    src/px4_msgs_ArmingCheckReply_message.cpp
+    src/px4_msgs_ArmingCheckRequest_message.cpp
+    src/px4_msgs_AutotuneAttitudeControlStatus_message.cpp
+    src/px4_msgs_BatteryStatus_message.cpp
+    src/px4_msgs_Buffer128_message.cpp
+    src/px4_msgs_ButtonEvent_message.cpp
+    src/px4_msgs_CameraCapture_message.cpp
+    src/px4_msgs_CameraStatus_message.cpp
+    src/px4_msgs_CameraTrigger_message.cpp
+    src/px4_msgs_CanInterfaceStatus_message.cpp
+    src/px4_msgs_CellularStatus_message.cpp
+    src/px4_msgs_CollisionConstraints_message.cpp
+    src/px4_msgs_ConfigOverrides_message.cpp
+    src/px4_msgs_ControlAllocatorStatus_message.cpp
+    src/px4_msgs_Cpuload_message.cpp
+    src/px4_msgs_DatamanRequest_message.cpp
+    src/px4_msgs_DatamanResponse_message.cpp
+    src/px4_msgs_DebugArray_message.cpp
+    src/px4_msgs_DebugKeyValue_message.cpp
+    src/px4_msgs_DebugValue_message.cpp
+    src/px4_msgs_DebugVect_message.cpp
+    src/px4_msgs_DifferentialPressure_message.cpp
+    src/px4_msgs_DistanceSensor_message.cpp
+    src/px4_msgs_DistanceSensorModeChangeRequest_message.cpp
+    src/px4_msgs_Ekf2Timestamps_message.cpp
+    src/px4_msgs_EscReport_message.cpp
+    src/px4_msgs_EscStatus_message.cpp
+    src/px4_msgs_EstimatorAidSource1d_message.cpp
+    src/px4_msgs_EstimatorAidSource2d_message.cpp
+    src/px4_msgs_EstimatorAidSource3d_message.cpp
+    src/px4_msgs_EstimatorBias_message.cpp
+    src/px4_msgs_EstimatorBias3d_message.cpp
+    src/px4_msgs_EstimatorEventFlags_message.cpp
+    src/px4_msgs_EstimatorGpsStatus_message.cpp
+    src/px4_msgs_EstimatorInnovations_message.cpp
+    src/px4_msgs_EstimatorSelectorStatus_message.cpp
+    src/px4_msgs_EstimatorSensorBias_message.cpp
+    src/px4_msgs_EstimatorStates_message.cpp
+    src/px4_msgs_EstimatorStatus_message.cpp
+    src/px4_msgs_EstimatorStatusFlags_message.cpp
+    src/px4_msgs_Event_message.cpp
+    src/px4_msgs_FailsafeFlags_message.cpp
+    src/px4_msgs_FailureDetectorStatus_message.cpp
+    src/px4_msgs_FigureEightStatus_message.cpp
+    src/px4_msgs_FlightPhaseEstimation_message.cpp
+    src/px4_msgs_FollowTarget_message.cpp
+    src/px4_msgs_FollowTargetEstimator_message.cpp
+    src/px4_msgs_FollowTargetStatus_message.cpp
+    src/px4_msgs_FuelTankStatus_message.cpp
+    src/px4_msgs_GeneratorStatus_message.cpp
+    src/px4_msgs_GeofenceResult_message.cpp
+    src/px4_msgs_GeofenceStatus_message.cpp
+    src/px4_msgs_GimbalControls_message.cpp
+    src/px4_msgs_GimbalDeviceAttitudeStatus_message.cpp
+    src/px4_msgs_GimbalDeviceInformation_message.cpp
+    src/px4_msgs_GimbalDeviceSetAttitude_message.cpp
+    src/px4_msgs_GimbalManagerInformation_message.cpp
+    src/px4_msgs_GimbalManagerSetAttitude_message.cpp
+    src/px4_msgs_GimbalManagerSetManualControl_message.cpp
+    src/px4_msgs_GimbalManagerStatus_message.cpp
+    src/px4_msgs_GotoSetpoint_message.cpp
+    src/px4_msgs_GpioConfig_message.cpp
+    src/px4_msgs_GpioIn_message.cpp
+    src/px4_msgs_GpioOut_message.cpp
+    src/px4_msgs_GpioRequest_message.cpp
+    src/px4_msgs_GpsDump_message.cpp
+    src/px4_msgs_GpsInjectData_message.cpp
+    src/px4_msgs_Gripper_message.cpp
+    src/px4_msgs_HealthReport_message.cpp
+    src/px4_msgs_HeaterStatus_message.cpp
+    src/px4_msgs_HomePosition_message.cpp
+    src/px4_msgs_HoverThrustEstimate_message.cpp
+    src/px4_msgs_InputRc_message.cpp
+    src/px4_msgs_InternalCombustionEngineStatus_message.cpp
+    src/px4_msgs_IridiumsbdStatus_message.cpp
+    src/px4_msgs_IrlockReport_message.cpp
+    src/px4_msgs_LandingGear_message.cpp
+    src/px4_msgs_LandingGearWheel_message.cpp
+    src/px4_msgs_LandingTargetInnovations_message.cpp
+    src/px4_msgs_LandingTargetPose_message.cpp
+    src/px4_msgs_LaunchDetectionStatus_message.cpp
+    src/px4_msgs_LedControl_message.cpp
+    src/px4_msgs_LogMessage_message.cpp
+    src/px4_msgs_LoggerStatus_message.cpp
+    src/px4_msgs_MagWorkerData_message.cpp
+    src/px4_msgs_MagnetometerBiasEstimate_message.cpp
+    src/px4_msgs_ManualControlSetpoint_message.cpp
+    src/px4_msgs_ManualControlSwitches_message.cpp
+    src/px4_msgs_MavlinkLog_message.cpp
+    src/px4_msgs_MavlinkTunnel_message.cpp
+    src/px4_msgs_MessageFormatRequest_message.cpp
+    src/px4_msgs_MessageFormatResponse_message.cpp
+    src/px4_msgs_Mission_message.cpp
+    src/px4_msgs_MissionResult_message.cpp
+    src/px4_msgs_ModeCompleted_message.cpp
+    src/px4_msgs_MountOrientation_message.cpp
+    src/px4_msgs_NavigatorMissionItem_message.cpp
+    src/px4_msgs_NavigatorStatus_message.cpp
+    src/px4_msgs_NormalizedUnsignedSetpoint_message.cpp
+    src/px4_msgs_NpfgStatus_message.cpp
+    src/px4_msgs_ObstacleDistance_message.cpp
+    src/px4_msgs_OffboardControlMode_message.cpp
+    src/px4_msgs_OnboardComputerStatus_message.cpp
+    src/px4_msgs_OpenDroneIdArmStatus_message.cpp
+    src/px4_msgs_OpenDroneIdOperatorId_message.cpp
+    src/px4_msgs_OpenDroneIdSelfId_message.cpp
+    src/px4_msgs_OpenDroneIdSystem_message.cpp
+    src/px4_msgs_OrbTest_message.cpp
+    src/px4_msgs_OrbTestLarge_message.cpp
+    src/px4_msgs_OrbTestMedium_message.cpp
+    src/px4_msgs_OrbitStatus_message.cpp
+    src/px4_msgs_ParameterResetRequest_message.cpp
+    src/px4_msgs_ParameterSetUsedRequest_message.cpp
+    src/px4_msgs_ParameterSetValueRequest_message.cpp
+    src/px4_msgs_ParameterSetValueResponse_message.cpp
+    src/px4_msgs_ParameterUpdate_message.cpp
+    src/px4_msgs_Ping_message.cpp
+    src/px4_msgs_PositionControllerLandingStatus_message.cpp
+    src/px4_msgs_PositionControllerStatus_message.cpp
+    src/px4_msgs_PositionSetpoint_message.cpp
+    src/px4_msgs_PositionSetpointTriplet_message.cpp
+    src/px4_msgs_PowerButtonState_message.cpp
+    src/px4_msgs_PowerMonitor_message.cpp
+    src/px4_msgs_PpsCapture_message.cpp
+    src/px4_msgs_PwmInput_message.cpp
+    src/px4_msgs_Px4ioStatus_message.cpp
+    src/px4_msgs_QshellReq_message.cpp
+    src/px4_msgs_QshellRetval_message.cpp
+    src/px4_msgs_RadioStatus_message.cpp
+    src/px4_msgs_RateCtrlStatus_message.cpp
+    src/px4_msgs_RcChannels_message.cpp
+    src/px4_msgs_RcParameterMap_message.cpp
+    src/px4_msgs_RegisterExtComponentReply_message.cpp
+    src/px4_msgs_RegisterExtComponentRequest_message.cpp
+    src/px4_msgs_RoverAckermannGuidanceStatus_message.cpp
+    src/px4_msgs_RoverAckermannSetpoint_message.cpp
+    src/px4_msgs_RoverAckermannStatus_message.cpp
+    src/px4_msgs_RoverDifferentialGuidanceStatus_message.cpp
+    src/px4_msgs_RoverDifferentialSetpoint_message.cpp
+    src/px4_msgs_RoverDifferentialStatus_message.cpp
+    src/px4_msgs_RoverMecanumGuidanceStatus_message.cpp
+    src/px4_msgs_RoverMecanumSetpoint_message.cpp
+    src/px4_msgs_RoverMecanumStatus_message.cpp
+    src/px4_msgs_Rpm_message.cpp
+    src/px4_msgs_RtlStatus_message.cpp
+    src/px4_msgs_RtlTimeEstimate_message.cpp
+    src/px4_msgs_SatelliteInfo_message.cpp
+    src/px4_msgs_SensorAccel_message.cpp
+    src/px4_msgs_SensorAccelFifo_message.cpp
+    src/px4_msgs_SensorAirflow_message.cpp
+    src/px4_msgs_SensorBaro_message.cpp
+    src/px4_msgs_SensorCombined_message.cpp
+    src/px4_msgs_SensorCorrection_message.cpp
+    src/px4_msgs_SensorGnssRelative_message.cpp
+    src/px4_msgs_SensorGps_message.cpp
+    src/px4_msgs_SensorGyro_message.cpp
+    src/px4_msgs_SensorGyroFft_message.cpp
+    src/px4_msgs_SensorGyroFifo_message.cpp
+    src/px4_msgs_SensorHygrometer_message.cpp
+    src/px4_msgs_SensorMag_message.cpp
+    src/px4_msgs_SensorOpticalFlow_message.cpp
+    src/px4_msgs_SensorPreflightMag_message.cpp
+    src/px4_msgs_SensorSelection_message.cpp
+    src/px4_msgs_SensorUwb_message.cpp
+    src/px4_msgs_SensorsStatus_message.cpp
+    src/px4_msgs_SensorsStatusImu_message.cpp
+    src/px4_msgs_SystemPower_message.cpp
+    src/px4_msgs_TakeoffStatus_message.cpp
+    src/px4_msgs_TaskStackInfo_message.cpp
+    src/px4_msgs_TecsStatus_message.cpp
+    src/px4_msgs_TelemetryStatus_message.cpp
+    src/px4_msgs_TiltrotorExtraControls_message.cpp
+    src/px4_msgs_TimesyncStatus_message.cpp
+    src/px4_msgs_TrajectoryBezier_message.cpp
+    src/px4_msgs_TrajectorySetpoint_message.cpp
+    src/px4_msgs_TrajectoryWaypoint_message.cpp
+    src/px4_msgs_TransponderReport_message.cpp
+    src/px4_msgs_TuneControl_message.cpp
+    src/px4_msgs_UavcanParameterRequest_message.cpp
+    src/px4_msgs_UavcanParameterValue_message.cpp
+    src/px4_msgs_UlogStream_message.cpp
+    src/px4_msgs_UlogStreamAck_message.cpp
+    src/px4_msgs_UnregisterExtComponent_message.cpp
+    src/px4_msgs_VehicleAcceleration_message.cpp
+    src/px4_msgs_VehicleAirData_message.cpp
+    src/px4_msgs_VehicleAngularAccelerationSetpoint_message.cpp
+    src/px4_msgs_VehicleAngularVelocity_message.cpp
+    src/px4_msgs_VehicleAttitude_message.cpp
+    src/px4_msgs_VehicleAttitudeSetpoint_message.cpp
+    src/px4_msgs_VehicleCommand_message.cpp
+    src/px4_msgs_VehicleCommandAck_message.cpp
+    src/px4_msgs_VehicleConstraints_message.cpp
+    src/px4_msgs_VehicleControlMode_message.cpp
+    src/px4_msgs_VehicleGlobalPosition_message.cpp
+    src/px4_msgs_VehicleImu_message.cpp
+    src/px4_msgs_VehicleImuStatus_message.cpp
+    src/px4_msgs_VehicleLandDetected_message.cpp
+    src/px4_msgs_VehicleLocalPosition_message.cpp
+    src/px4_msgs_VehicleLocalPositionSetpoint_message.cpp
+    src/px4_msgs_VehicleMagnetometer_message.cpp
+    src/px4_msgs_VehicleOdometry_message.cpp
+    src/px4_msgs_VehicleOpticalFlow_message.cpp
+    src/px4_msgs_VehicleOpticalFlowVel_message.cpp
+    src/px4_msgs_VehicleRatesSetpoint_message.cpp
+    src/px4_msgs_VehicleRoi_message.cpp
+    src/px4_msgs_VehicleStatus_message.cpp
+    src/px4_msgs_VehicleThrustSetpoint_message.cpp
+    src/px4_msgs_VehicleTorqueSetpoint_message.cpp
+    src/px4_msgs_VehicleTrajectoryBezier_message.cpp
+    src/px4_msgs_VehicleTrajectoryWaypoint_message.cpp
+    src/px4_msgs_VelocityLimits_message.cpp
+    src/px4_msgs_VtolVehicleStatus_message.cpp
+    src/px4_msgs_WheelEncoders_message.cpp
+    src/px4_msgs_Wind_message.cpp
+    src/px4_msgs_YawEstimatorStatus_message.cpp
+)
+if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+target_compile_options(px4_msgs_matlab PUBLIC 
+  $<$<OR:$<COMPILE_LANGUAGE:CXX>,$<COMPILE_LANGUAGE:C>>:
+  -Wall -Wextra -Wpedantic
+  >)
+endif()
+target_include_directories(px4_msgs_matlab PUBLIC
+  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/px4_msgs>
+  $<INSTALL_INTERFACE:include>)
+target_link_libraries( px4_msgs_matlab
+	"/usr/local/MATLAB/R2025a/sys/os/glnxa64/orig/libstdc++.so.6"
+	"/usr/local/MATLAB/R2025a/extern/bin/glnxa64/libMatlabDataArray.so"
+	${CMAKE_DL_LIBS}
+	)
+ament_target_dependencies(
+  px4_msgs_matlab
+  "class_loader"
+  "console_bridge"
+  "rclcpp"
+  "rcutils"
+)
+rosidl_get_typesupport_target(cpp_typesupport_target "${PROJECT_NAME}" "rosidl_typesupport_cpp")
+target_link_libraries(px4_msgs_matlab "${cpp_typesupport_target}")
+# Causes the visibility macros to use dllexport rather than dllimport,
+# which is appropriate when building the dll but not consuming it.
+target_compile_definitions(px4_msgs_matlab PRIVATE "PX4_MSGS_BUILDING_LIBRARY")
+install(
+  DIRECTORY include/
+  DESTINATION include
+)
+install(
+  TARGETS px4_msgs_matlab
+  EXPORT export_${PROJECT_NAME}
+  ARCHIVE DESTINATION lib
+  LIBRARY DESTINATION lib
+  RUNTIME DESTINATION bin
+)
+install (DIRECTORY m/ DESTINATION m/ FILES_MATCHING PATTERN "*.m")
+ament_export_include_directories(
+  include
+)
+ament_export_libraries(
+  px4_msgs_matlab
+)
+foreach(file_i ${CUDA_BINS})
+add_custom_command(
+                   TARGET 
+                   POST_BUILD
+                   COMMAND ${CMAKE_COMMAND}
+                   ARGS -E copy ${PROJECT_SOURCE_DIR}/src/${file_i} ${CMAKE_INSTALL_PREFIX}/_ert_rtw/${file_i}
+				   )
+add_custom_command(
+                   TARGET 
+                   POST_BUILD
+                   COMMAND ${CMAKE_COMMAND}
+                   ARGS -E copy ${PROJECT_SOURCE_DIR}/src/${file_i} ${CMAKE_INSTALL_PREFIX}/codegen/exe//${file_i}
+				   )				   
+endforeach(file_i)
+ament_package()
+# Generated on Fri Jul 25 17:39:28 2025

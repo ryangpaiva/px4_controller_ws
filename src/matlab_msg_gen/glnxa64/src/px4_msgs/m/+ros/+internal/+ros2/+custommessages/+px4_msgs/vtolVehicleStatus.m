@@ -1,0 +1,30 @@
+function [data, info] = vtolVehicleStatus
+%VtolVehicleStatus gives an empty data for px4_msgs/VtolVehicleStatus
+% Copyright 2019-2021 The MathWorks, Inc.
+data = struct();
+data.MessageType = 'px4_msgs/VtolVehicleStatus';
+[data.MESSAGE_VERSION, info.MESSAGE_VERSION] = ros.internal.ros2.messages.ros2.default_type('uint32',1,0, 0, [NaN]);
+[data.VEHICLE_VTOL_STATE_UNDEFINED, info.VEHICLE_VTOL_STATE_UNDEFINED] = ros.internal.ros2.messages.ros2.default_type('uint8',1,0, 0, [NaN]);
+[data.VEHICLE_VTOL_STATE_TRANSITION_TO_FW, info.VEHICLE_VTOL_STATE_TRANSITION_TO_FW] = ros.internal.ros2.messages.ros2.default_type('uint8',1,0, 1, [NaN]);
+[data.VEHICLE_VTOL_STATE_TRANSITION_TO_MC, info.VEHICLE_VTOL_STATE_TRANSITION_TO_MC] = ros.internal.ros2.messages.ros2.default_type('uint8',1,0, 2, [NaN]);
+[data.VEHICLE_VTOL_STATE_MC, info.VEHICLE_VTOL_STATE_MC] = ros.internal.ros2.messages.ros2.default_type('uint8',1,0, 3, [NaN]);
+[data.VEHICLE_VTOL_STATE_FW, info.VEHICLE_VTOL_STATE_FW] = ros.internal.ros2.messages.ros2.default_type('uint8',1,0, 4, [NaN]);
+[data.timestamp, info.timestamp] = ros.internal.ros2.messages.ros2.default_type('uint64',1,0);
+[data.vehicle_vtol_state, info.vehicle_vtol_state] = ros.internal.ros2.messages.ros2.default_type('uint8',1,0);
+[data.fixed_wing_system_failure, info.fixed_wing_system_failure] = ros.internal.ros2.messages.ros2.default_type('logical',1,0);
+info.MessageType = 'px4_msgs/VtolVehicleStatus';
+info.constant = 0;
+info.default = 0;
+info.maxstrlen = NaN;
+info.MaxLen = 1;
+info.MinLen = 1;
+info.MatPath = cell(1,9);
+info.MatPath{1} = 'MESSAGE_VERSION';
+info.MatPath{2} = 'VEHICLE_VTOL_STATE_UNDEFINED';
+info.MatPath{3} = 'VEHICLE_VTOL_STATE_TRANSITION_TO_FW';
+info.MatPath{4} = 'VEHICLE_VTOL_STATE_TRANSITION_TO_MC';
+info.MatPath{5} = 'VEHICLE_VTOL_STATE_MC';
+info.MatPath{6} = 'VEHICLE_VTOL_STATE_FW';
+info.MatPath{7} = 'timestamp';
+info.MatPath{8} = 'vehicle_vtol_state';
+info.MatPath{9} = 'fixed_wing_system_failure';

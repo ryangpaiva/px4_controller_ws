@@ -1,0 +1,36 @@
+function [data, info] = fuelTankStatus
+%FuelTankStatus gives an empty data for px4_msgs/FuelTankStatus
+% Copyright 2019-2021 The MathWorks, Inc.
+data = struct();
+data.MessageType = 'px4_msgs/FuelTankStatus';
+[data.timestamp, info.timestamp] = ros.internal.ros2.messages.ros2.default_type('uint64',1,0);
+[data.maximum_fuel_capacity, info.maximum_fuel_capacity] = ros.internal.ros2.messages.ros2.default_type('single',1,0);
+[data.consumed_fuel, info.consumed_fuel] = ros.internal.ros2.messages.ros2.default_type('single',1,0);
+[data.fuel_consumption_rate, info.fuel_consumption_rate] = ros.internal.ros2.messages.ros2.default_type('single',1,0);
+[data.percent_remaining, info.percent_remaining] = ros.internal.ros2.messages.ros2.default_type('uint8',1,0);
+[data.remaining_fuel, info.remaining_fuel] = ros.internal.ros2.messages.ros2.default_type('single',1,0);
+[data.fuel_tank_id, info.fuel_tank_id] = ros.internal.ros2.messages.ros2.default_type('uint8',1,0);
+[data.fuel_type, info.fuel_type] = ros.internal.ros2.messages.ros2.default_type('uint32',1,0);
+[data.MAV_FUEL_TYPE_UNKNOWN, info.MAV_FUEL_TYPE_UNKNOWN] = ros.internal.ros2.messages.ros2.default_type('uint8',1,0, 0, [NaN]);
+[data.MAV_FUEL_TYPE_LIQUID, info.MAV_FUEL_TYPE_LIQUID] = ros.internal.ros2.messages.ros2.default_type('uint8',1,0, 1, [NaN]);
+[data.MAV_FUEL_TYPE_GAS, info.MAV_FUEL_TYPE_GAS] = ros.internal.ros2.messages.ros2.default_type('uint8',1,0, 2, [NaN]);
+[data.temperature, info.temperature] = ros.internal.ros2.messages.ros2.default_type('single',1,0);
+info.MessageType = 'px4_msgs/FuelTankStatus';
+info.constant = 0;
+info.default = 0;
+info.maxstrlen = NaN;
+info.MaxLen = 1;
+info.MinLen = 1;
+info.MatPath = cell(1,12);
+info.MatPath{1} = 'timestamp';
+info.MatPath{2} = 'maximum_fuel_capacity';
+info.MatPath{3} = 'consumed_fuel';
+info.MatPath{4} = 'fuel_consumption_rate';
+info.MatPath{5} = 'percent_remaining';
+info.MatPath{6} = 'remaining_fuel';
+info.MatPath{7} = 'fuel_tank_id';
+info.MatPath{8} = 'fuel_type';
+info.MatPath{9} = 'MAV_FUEL_TYPE_UNKNOWN';
+info.MatPath{10} = 'MAV_FUEL_TYPE_LIQUID';
+info.MatPath{11} = 'MAV_FUEL_TYPE_GAS';
+info.MatPath{12} = 'temperature';

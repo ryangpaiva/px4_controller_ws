@@ -1,0 +1,30 @@
+function [data, info] = satelliteInfo
+%SatelliteInfo gives an empty data for px4_msgs/SatelliteInfo
+% Copyright 2019-2021 The MathWorks, Inc.
+data = struct();
+data.MessageType = 'px4_msgs/SatelliteInfo';
+[data.timestamp, info.timestamp] = ros.internal.ros2.messages.ros2.default_type('uint64',1,0);
+[data.SAT_INFO_MAX_SATELLITES, info.SAT_INFO_MAX_SATELLITES] = ros.internal.ros2.messages.ros2.default_type('uint8',1,0, 20, [NaN]);
+[data.count, info.count] = ros.internal.ros2.messages.ros2.default_type('uint8',1,0);
+[data.svid, info.svid] = ros.internal.ros2.messages.ros2.default_type('uint8',20,0);
+[data.used, info.used] = ros.internal.ros2.messages.ros2.default_type('uint8',20,0);
+[data.elevation, info.elevation] = ros.internal.ros2.messages.ros2.default_type('uint8',20,0);
+[data.azimuth, info.azimuth] = ros.internal.ros2.messages.ros2.default_type('uint8',20,0);
+[data.snr, info.snr] = ros.internal.ros2.messages.ros2.default_type('uint8',20,0);
+[data.prn, info.prn] = ros.internal.ros2.messages.ros2.default_type('uint8',20,0);
+info.MessageType = 'px4_msgs/SatelliteInfo';
+info.constant = 0;
+info.default = 0;
+info.maxstrlen = NaN;
+info.MaxLen = 1;
+info.MinLen = 1;
+info.MatPath = cell(1,9);
+info.MatPath{1} = 'timestamp';
+info.MatPath{2} = 'SAT_INFO_MAX_SATELLITES';
+info.MatPath{3} = 'count';
+info.MatPath{4} = 'svid';
+info.MatPath{5} = 'used';
+info.MatPath{6} = 'elevation';
+info.MatPath{7} = 'azimuth';
+info.MatPath{8} = 'snr';
+info.MatPath{9} = 'prn';

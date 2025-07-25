@@ -1,0 +1,30 @@
+function [data, info] = parameterUpdate
+%ParameterUpdate gives an empty data for px4_msgs/ParameterUpdate
+% Copyright 2019-2021 The MathWorks, Inc.
+data = struct();
+data.MessageType = 'px4_msgs/ParameterUpdate';
+[data.timestamp, info.timestamp] = ros.internal.ros2.messages.ros2.default_type('uint64',1,0);
+[data.instance, info.instance] = ros.internal.ros2.messages.ros2.default_type('uint32',1,0);
+[data.get_count, info.get_count] = ros.internal.ros2.messages.ros2.default_type('uint32',1,0);
+[data.set_count, info.set_count] = ros.internal.ros2.messages.ros2.default_type('uint32',1,0);
+[data.find_count, info.find_count] = ros.internal.ros2.messages.ros2.default_type('uint32',1,0);
+[data.export_count, info.export_count] = ros.internal.ros2.messages.ros2.default_type('uint32',1,0);
+[data.active, info.active] = ros.internal.ros2.messages.ros2.default_type('uint16',1,0);
+[data.changed, info.changed] = ros.internal.ros2.messages.ros2.default_type('uint16',1,0);
+[data.custom_default, info.custom_default] = ros.internal.ros2.messages.ros2.default_type('uint16',1,0);
+info.MessageType = 'px4_msgs/ParameterUpdate';
+info.constant = 0;
+info.default = 0;
+info.maxstrlen = NaN;
+info.MaxLen = 1;
+info.MinLen = 1;
+info.MatPath = cell(1,9);
+info.MatPath{1} = 'timestamp';
+info.MatPath{2} = 'instance';
+info.MatPath{3} = 'get_count';
+info.MatPath{4} = 'set_count';
+info.MatPath{5} = 'find_count';
+info.MatPath{6} = 'export_count';
+info.MatPath{7} = 'active';
+info.MatPath{8} = 'changed';
+info.MatPath{9} = 'custom_default';

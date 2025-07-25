@@ -1,0 +1,30 @@
+function [data, info] = cameraCapture
+%CameraCapture gives an empty data for px4_msgs/CameraCapture
+% Copyright 2019-2021 The MathWorks, Inc.
+data = struct();
+data.MessageType = 'px4_msgs/CameraCapture';
+[data.timestamp, info.timestamp] = ros.internal.ros2.messages.ros2.default_type('uint64',1,0);
+[data.timestamp_utc, info.timestamp_utc] = ros.internal.ros2.messages.ros2.default_type('uint64',1,0);
+[data.seq, info.seq] = ros.internal.ros2.messages.ros2.default_type('uint32',1,0);
+[data.lat, info.lat] = ros.internal.ros2.messages.ros2.default_type('double',1,0);
+[data.lon, info.lon] = ros.internal.ros2.messages.ros2.default_type('double',1,0);
+[data.alt, info.alt] = ros.internal.ros2.messages.ros2.default_type('single',1,0);
+[data.ground_distance, info.ground_distance] = ros.internal.ros2.messages.ros2.default_type('single',1,0);
+[data.q, info.q] = ros.internal.ros2.messages.ros2.default_type('single',4,0);
+[data.result, info.result] = ros.internal.ros2.messages.ros2.default_type('int8',1,0);
+info.MessageType = 'px4_msgs/CameraCapture';
+info.constant = 0;
+info.default = 0;
+info.maxstrlen = NaN;
+info.MaxLen = 1;
+info.MinLen = 1;
+info.MatPath = cell(1,9);
+info.MatPath{1} = 'timestamp';
+info.MatPath{2} = 'timestamp_utc';
+info.MatPath{3} = 'seq';
+info.MatPath{4} = 'lat';
+info.MatPath{5} = 'lon';
+info.MatPath{6} = 'alt';
+info.MatPath{7} = 'ground_distance';
+info.MatPath{8} = 'q';
+info.MatPath{9} = 'result';

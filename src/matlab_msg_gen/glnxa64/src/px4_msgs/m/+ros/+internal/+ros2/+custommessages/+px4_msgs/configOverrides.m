@@ -1,0 +1,32 @@
+function [data, info] = configOverrides
+%ConfigOverrides gives an empty data for px4_msgs/ConfigOverrides
+% Copyright 2019-2021 The MathWorks, Inc.
+data = struct();
+data.MessageType = 'px4_msgs/ConfigOverrides';
+[data.MESSAGE_VERSION, info.MESSAGE_VERSION] = ros.internal.ros2.messages.ros2.default_type('uint32',1,0, 0, [NaN]);
+[data.timestamp, info.timestamp] = ros.internal.ros2.messages.ros2.default_type('uint64',1,0);
+[data.disable_auto_disarm, info.disable_auto_disarm] = ros.internal.ros2.messages.ros2.default_type('logical',1,0);
+[data.defer_failsafes, info.defer_failsafes] = ros.internal.ros2.messages.ros2.default_type('logical',1,0);
+[data.defer_failsafes_timeout_s, info.defer_failsafes_timeout_s] = ros.internal.ros2.messages.ros2.default_type('int16',1,0);
+[data.SOURCE_TYPE_MODE, info.SOURCE_TYPE_MODE] = ros.internal.ros2.messages.ros2.default_type('int8',1,0, 0, [NaN]);
+[data.SOURCE_TYPE_MODE_EXECUTOR, info.SOURCE_TYPE_MODE_EXECUTOR] = ros.internal.ros2.messages.ros2.default_type('int8',1,0, 1, [NaN]);
+[data.source_type, info.source_type] = ros.internal.ros2.messages.ros2.default_type('int8',1,0);
+[data.source_id, info.source_id] = ros.internal.ros2.messages.ros2.default_type('uint8',1,0);
+[data.ORB_QUEUE_LENGTH, info.ORB_QUEUE_LENGTH] = ros.internal.ros2.messages.ros2.default_type('uint8',1,0, 4, [NaN]);
+info.MessageType = 'px4_msgs/ConfigOverrides';
+info.constant = 0;
+info.default = 0;
+info.maxstrlen = NaN;
+info.MaxLen = 1;
+info.MinLen = 1;
+info.MatPath = cell(1,10);
+info.MatPath{1} = 'MESSAGE_VERSION';
+info.MatPath{2} = 'timestamp';
+info.MatPath{3} = 'disable_auto_disarm';
+info.MatPath{4} = 'defer_failsafes';
+info.MatPath{5} = 'defer_failsafes_timeout_s';
+info.MatPath{6} = 'SOURCE_TYPE_MODE';
+info.MatPath{7} = 'SOURCE_TYPE_MODE_EXECUTOR';
+info.MatPath{8} = 'source_type';
+info.MatPath{9} = 'source_id';
+info.MatPath{10} = 'ORB_QUEUE_LENGTH';

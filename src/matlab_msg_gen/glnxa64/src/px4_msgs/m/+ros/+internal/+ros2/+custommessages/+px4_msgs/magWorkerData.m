@@ -1,0 +1,34 @@
+function [data, info] = magWorkerData
+%MagWorkerData gives an empty data for px4_msgs/MagWorkerData
+% Copyright 2019-2021 The MathWorks, Inc.
+data = struct();
+data.MessageType = 'px4_msgs/MagWorkerData';
+[data.timestamp, info.timestamp] = ros.internal.ros2.messages.ros2.default_type('uint64',1,0);
+[data.timestamp_sample, info.timestamp_sample] = ros.internal.ros2.messages.ros2.default_type('uint64',1,0);
+[data.MAX_MAGS, info.MAX_MAGS] = ros.internal.ros2.messages.ros2.default_type('uint8',1,0, 4, [NaN]);
+[data.done_count, info.done_count] = ros.internal.ros2.messages.ros2.default_type('uint32',1,0);
+[data.calibration_points_perside, info.calibration_points_perside] = ros.internal.ros2.messages.ros2.default_type('uint32',1,0);
+[data.calibration_interval_perside_us, info.calibration_interval_perside_us] = ros.internal.ros2.messages.ros2.default_type('uint64',1,0);
+[data.calibration_counter_total, info.calibration_counter_total] = ros.internal.ros2.messages.ros2.default_type('uint32',4,0);
+[data.side_data_collected, info.side_data_collected] = ros.internal.ros2.messages.ros2.default_type('logical',4,0);
+[data.x, info.x] = ros.internal.ros2.messages.ros2.default_type('single',4,0);
+[data.y, info.y] = ros.internal.ros2.messages.ros2.default_type('single',4,0);
+[data.z, info.z] = ros.internal.ros2.messages.ros2.default_type('single',4,0);
+info.MessageType = 'px4_msgs/MagWorkerData';
+info.constant = 0;
+info.default = 0;
+info.maxstrlen = NaN;
+info.MaxLen = 1;
+info.MinLen = 1;
+info.MatPath = cell(1,11);
+info.MatPath{1} = 'timestamp';
+info.MatPath{2} = 'timestamp_sample';
+info.MatPath{3} = 'MAX_MAGS';
+info.MatPath{4} = 'done_count';
+info.MatPath{5} = 'calibration_points_perside';
+info.MatPath{6} = 'calibration_interval_perside_us';
+info.MatPath{7} = 'calibration_counter_total';
+info.MatPath{8} = 'side_data_collected';
+info.MatPath{9} = 'x';
+info.MatPath{10} = 'y';
+info.MatPath{11} = 'z';

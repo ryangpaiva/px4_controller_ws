@@ -1,0 +1,36 @@
+function [data, info] = followTargetEstimator
+%FollowTargetEstimator gives an empty data for px4_msgs/FollowTargetEstimator
+% Copyright 2019-2021 The MathWorks, Inc.
+data = struct();
+data.MessageType = 'px4_msgs/FollowTargetEstimator';
+[data.timestamp, info.timestamp] = ros.internal.ros2.messages.ros2.default_type('uint64',1,0);
+[data.last_filter_reset_timestamp, info.last_filter_reset_timestamp] = ros.internal.ros2.messages.ros2.default_type('uint64',1,0);
+[data.valid, info.valid] = ros.internal.ros2.messages.ros2.default_type('logical',1,0);
+[data.stale, info.stale] = ros.internal.ros2.messages.ros2.default_type('logical',1,0);
+[data.lat_est, info.lat_est] = ros.internal.ros2.messages.ros2.default_type('double',1,0);
+[data.lon_est, info.lon_est] = ros.internal.ros2.messages.ros2.default_type('double',1,0);
+[data.alt_est, info.alt_est] = ros.internal.ros2.messages.ros2.default_type('single',1,0);
+[data.pos_est, info.pos_est] = ros.internal.ros2.messages.ros2.default_type('single',3,0);
+[data.vel_est, info.vel_est] = ros.internal.ros2.messages.ros2.default_type('single',3,0);
+[data.acc_est, info.acc_est] = ros.internal.ros2.messages.ros2.default_type('single',3,0);
+[data.prediction_count, info.prediction_count] = ros.internal.ros2.messages.ros2.default_type('uint64',1,0);
+[data.fusion_count, info.fusion_count] = ros.internal.ros2.messages.ros2.default_type('uint64',1,0);
+info.MessageType = 'px4_msgs/FollowTargetEstimator';
+info.constant = 0;
+info.default = 0;
+info.maxstrlen = NaN;
+info.MaxLen = 1;
+info.MinLen = 1;
+info.MatPath = cell(1,12);
+info.MatPath{1} = 'timestamp';
+info.MatPath{2} = 'last_filter_reset_timestamp';
+info.MatPath{3} = 'valid';
+info.MatPath{4} = 'stale';
+info.MatPath{5} = 'lat_est';
+info.MatPath{6} = 'lon_est';
+info.MatPath{7} = 'alt_est';
+info.MatPath{8} = 'pos_est';
+info.MatPath{9} = 'vel_est';
+info.MatPath{10} = 'acc_est';
+info.MatPath{11} = 'prediction_count';
+info.MatPath{12} = 'fusion_count';

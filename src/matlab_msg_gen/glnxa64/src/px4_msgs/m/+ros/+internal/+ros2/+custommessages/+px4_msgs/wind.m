@@ -1,0 +1,32 @@
+function [data, info] = wind
+%Wind gives an empty data for px4_msgs/Wind
+% Copyright 2019-2021 The MathWorks, Inc.
+data = struct();
+data.MessageType = 'px4_msgs/Wind';
+[data.timestamp, info.timestamp] = ros.internal.ros2.messages.ros2.default_type('uint64',1,0);
+[data.timestamp_sample, info.timestamp_sample] = ros.internal.ros2.messages.ros2.default_type('uint64',1,0);
+[data.windspeed_north, info.windspeed_north] = ros.internal.ros2.messages.ros2.default_type('single',1,0);
+[data.windspeed_east, info.windspeed_east] = ros.internal.ros2.messages.ros2.default_type('single',1,0);
+[data.variance_north, info.variance_north] = ros.internal.ros2.messages.ros2.default_type('single',1,0);
+[data.variance_east, info.variance_east] = ros.internal.ros2.messages.ros2.default_type('single',1,0);
+[data.tas_innov, info.tas_innov] = ros.internal.ros2.messages.ros2.default_type('single',1,0);
+[data.tas_innov_var, info.tas_innov_var] = ros.internal.ros2.messages.ros2.default_type('single',1,0);
+[data.beta_innov, info.beta_innov] = ros.internal.ros2.messages.ros2.default_type('single',1,0);
+[data.beta_innov_var, info.beta_innov_var] = ros.internal.ros2.messages.ros2.default_type('single',1,0);
+info.MessageType = 'px4_msgs/Wind';
+info.constant = 0;
+info.default = 0;
+info.maxstrlen = NaN;
+info.MaxLen = 1;
+info.MinLen = 1;
+info.MatPath = cell(1,10);
+info.MatPath{1} = 'timestamp';
+info.MatPath{2} = 'timestamp_sample';
+info.MatPath{3} = 'windspeed_north';
+info.MatPath{4} = 'windspeed_east';
+info.MatPath{5} = 'variance_north';
+info.MatPath{6} = 'variance_east';
+info.MatPath{7} = 'tas_innov';
+info.MatPath{8} = 'tas_innov_var';
+info.MatPath{9} = 'beta_innov';
+info.MatPath{10} = 'beta_innov_var';

@@ -1,0 +1,34 @@
+function [data, info] = sensorGyroFft
+%SensorGyroFft gives an empty data for px4_msgs/SensorGyroFft
+% Copyright 2019-2021 The MathWorks, Inc.
+data = struct();
+data.MessageType = 'px4_msgs/SensorGyroFft';
+[data.timestamp, info.timestamp] = ros.internal.ros2.messages.ros2.default_type('uint64',1,0);
+[data.timestamp_sample, info.timestamp_sample] = ros.internal.ros2.messages.ros2.default_type('uint64',1,0);
+[data.device_id, info.device_id] = ros.internal.ros2.messages.ros2.default_type('uint32',1,0);
+[data.sensor_sample_rate_hz, info.sensor_sample_rate_hz] = ros.internal.ros2.messages.ros2.default_type('single',1,0);
+[data.resolution_hz, info.resolution_hz] = ros.internal.ros2.messages.ros2.default_type('single',1,0);
+[data.peak_frequencies_x, info.peak_frequencies_x] = ros.internal.ros2.messages.ros2.default_type('single',3,0);
+[data.peak_frequencies_y, info.peak_frequencies_y] = ros.internal.ros2.messages.ros2.default_type('single',3,0);
+[data.peak_frequencies_z, info.peak_frequencies_z] = ros.internal.ros2.messages.ros2.default_type('single',3,0);
+[data.peak_snr_x, info.peak_snr_x] = ros.internal.ros2.messages.ros2.default_type('single',3,0);
+[data.peak_snr_y, info.peak_snr_y] = ros.internal.ros2.messages.ros2.default_type('single',3,0);
+[data.peak_snr_z, info.peak_snr_z] = ros.internal.ros2.messages.ros2.default_type('single',3,0);
+info.MessageType = 'px4_msgs/SensorGyroFft';
+info.constant = 0;
+info.default = 0;
+info.maxstrlen = NaN;
+info.MaxLen = 1;
+info.MinLen = 1;
+info.MatPath = cell(1,11);
+info.MatPath{1} = 'timestamp';
+info.MatPath{2} = 'timestamp_sample';
+info.MatPath{3} = 'device_id';
+info.MatPath{4} = 'sensor_sample_rate_hz';
+info.MatPath{5} = 'resolution_hz';
+info.MatPath{6} = 'peak_frequencies_x';
+info.MatPath{7} = 'peak_frequencies_y';
+info.MatPath{8} = 'peak_frequencies_z';
+info.MatPath{9} = 'peak_snr_x';
+info.MatPath{10} = 'peak_snr_y';
+info.MatPath{11} = 'peak_snr_z';

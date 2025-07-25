@@ -1,0 +1,34 @@
+function [data, info] = sensorsStatusImu
+%SensorsStatusImu gives an empty data for px4_msgs/SensorsStatusImu
+% Copyright 2019-2021 The MathWorks, Inc.
+data = struct();
+data.MessageType = 'px4_msgs/SensorsStatusImu';
+[data.timestamp, info.timestamp] = ros.internal.ros2.messages.ros2.default_type('uint64',1,0);
+[data.accel_device_id_primary, info.accel_device_id_primary] = ros.internal.ros2.messages.ros2.default_type('uint32',1,0);
+[data.accel_device_ids, info.accel_device_ids] = ros.internal.ros2.messages.ros2.default_type('uint32',4,0);
+[data.accel_inconsistency_m_s_s, info.accel_inconsistency_m_s_s] = ros.internal.ros2.messages.ros2.default_type('single',4,0);
+[data.accel_healthy, info.accel_healthy] = ros.internal.ros2.messages.ros2.default_type('logical',4,0);
+[data.accel_priority, info.accel_priority] = ros.internal.ros2.messages.ros2.default_type('uint8',4,0);
+[data.gyro_device_id_primary, info.gyro_device_id_primary] = ros.internal.ros2.messages.ros2.default_type('uint32',1,0);
+[data.gyro_device_ids, info.gyro_device_ids] = ros.internal.ros2.messages.ros2.default_type('uint32',4,0);
+[data.gyro_inconsistency_rad_s, info.gyro_inconsistency_rad_s] = ros.internal.ros2.messages.ros2.default_type('single',4,0);
+[data.gyro_healthy, info.gyro_healthy] = ros.internal.ros2.messages.ros2.default_type('logical',4,0);
+[data.gyro_priority, info.gyro_priority] = ros.internal.ros2.messages.ros2.default_type('uint8',4,0);
+info.MessageType = 'px4_msgs/SensorsStatusImu';
+info.constant = 0;
+info.default = 0;
+info.maxstrlen = NaN;
+info.MaxLen = 1;
+info.MinLen = 1;
+info.MatPath = cell(1,11);
+info.MatPath{1} = 'timestamp';
+info.MatPath{2} = 'accel_device_id_primary';
+info.MatPath{3} = 'accel_device_ids';
+info.MatPath{4} = 'accel_inconsistency_m_s_s';
+info.MatPath{5} = 'accel_healthy';
+info.MatPath{6} = 'accel_priority';
+info.MatPath{7} = 'gyro_device_id_primary';
+info.MatPath{8} = 'gyro_device_ids';
+info.MatPath{9} = 'gyro_inconsistency_rad_s';
+info.MatPath{10} = 'gyro_healthy';
+info.MatPath{11} = 'gyro_priority';

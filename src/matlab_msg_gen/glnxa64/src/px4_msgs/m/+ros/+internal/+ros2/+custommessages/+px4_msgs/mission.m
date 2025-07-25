@@ -1,0 +1,34 @@
+function [data, info] = mission
+%Mission gives an empty data for px4_msgs/Mission
+% Copyright 2019-2021 The MathWorks, Inc.
+data = struct();
+data.MessageType = 'px4_msgs/Mission';
+[data.timestamp, info.timestamp] = ros.internal.ros2.messages.ros2.default_type('uint64',1,0);
+[data.mission_dataman_id, info.mission_dataman_id] = ros.internal.ros2.messages.ros2.default_type('uint8',1,0);
+[data.fence_dataman_id, info.fence_dataman_id] = ros.internal.ros2.messages.ros2.default_type('uint8',1,0);
+[data.safepoint_dataman_id, info.safepoint_dataman_id] = ros.internal.ros2.messages.ros2.default_type('uint8',1,0);
+[data.count, info.count] = ros.internal.ros2.messages.ros2.default_type('uint16',1,0);
+[data.current_seq, info.current_seq] = ros.internal.ros2.messages.ros2.default_type('int32',1,0);
+[data.land_start_index, info.land_start_index] = ros.internal.ros2.messages.ros2.default_type('int32',1,0);
+[data.land_index, info.land_index] = ros.internal.ros2.messages.ros2.default_type('int32',1,0);
+[data.mission_id, info.mission_id] = ros.internal.ros2.messages.ros2.default_type('uint32',1,0);
+[data.geofence_id, info.geofence_id] = ros.internal.ros2.messages.ros2.default_type('uint32',1,0);
+[data.safe_points_id, info.safe_points_id] = ros.internal.ros2.messages.ros2.default_type('uint32',1,0);
+info.MessageType = 'px4_msgs/Mission';
+info.constant = 0;
+info.default = 0;
+info.maxstrlen = NaN;
+info.MaxLen = 1;
+info.MinLen = 1;
+info.MatPath = cell(1,11);
+info.MatPath{1} = 'timestamp';
+info.MatPath{2} = 'mission_dataman_id';
+info.MatPath{3} = 'fence_dataman_id';
+info.MatPath{4} = 'safepoint_dataman_id';
+info.MatPath{5} = 'count';
+info.MatPath{6} = 'current_seq';
+info.MatPath{7} = 'land_start_index';
+info.MatPath{8} = 'land_index';
+info.MatPath{9} = 'mission_id';
+info.MatPath{10} = 'geofence_id';
+info.MatPath{11} = 'safe_points_id';

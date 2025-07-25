@@ -1,0 +1,34 @@
+function [data, info] = roverDifferentialStatus
+%RoverDifferentialStatus gives an empty data for px4_msgs/RoverDifferentialStatus
+% Copyright 2019-2021 The MathWorks, Inc.
+data = struct();
+data.MessageType = 'px4_msgs/RoverDifferentialStatus';
+[data.timestamp, info.timestamp] = ros.internal.ros2.messages.ros2.default_type('uint64',1,0);
+[data.measured_forward_speed, info.measured_forward_speed] = ros.internal.ros2.messages.ros2.default_type('single',1,0);
+[data.adjusted_forward_speed_setpoint, info.adjusted_forward_speed_setpoint] = ros.internal.ros2.messages.ros2.default_type('single',1,0);
+[data.measured_yaw, info.measured_yaw] = ros.internal.ros2.messages.ros2.default_type('single',1,0);
+[data.adjusted_yaw_setpoint, info.adjusted_yaw_setpoint] = ros.internal.ros2.messages.ros2.default_type('single',1,0);
+[data.clyaw_yaw_rate_setpoint, info.clyaw_yaw_rate_setpoint] = ros.internal.ros2.messages.ros2.default_type('single',1,0);
+[data.measured_yaw_rate, info.measured_yaw_rate] = ros.internal.ros2.messages.ros2.default_type('single',1,0);
+[data.adjusted_yaw_rate_setpoint, info.adjusted_yaw_rate_setpoint] = ros.internal.ros2.messages.ros2.default_type('single',1,0);
+[data.pid_yaw_integral, info.pid_yaw_integral] = ros.internal.ros2.messages.ros2.default_type('single',1,0);
+[data.pid_yaw_rate_integral, info.pid_yaw_rate_integral] = ros.internal.ros2.messages.ros2.default_type('single',1,0);
+[data.pid_throttle_integral, info.pid_throttle_integral] = ros.internal.ros2.messages.ros2.default_type('single',1,0);
+info.MessageType = 'px4_msgs/RoverDifferentialStatus';
+info.constant = 0;
+info.default = 0;
+info.maxstrlen = NaN;
+info.MaxLen = 1;
+info.MinLen = 1;
+info.MatPath = cell(1,11);
+info.MatPath{1} = 'timestamp';
+info.MatPath{2} = 'measured_forward_speed';
+info.MatPath{3} = 'adjusted_forward_speed_setpoint';
+info.MatPath{4} = 'measured_yaw';
+info.MatPath{5} = 'adjusted_yaw_setpoint';
+info.MatPath{6} = 'clyaw_yaw_rate_setpoint';
+info.MatPath{7} = 'measured_yaw_rate';
+info.MatPath{8} = 'adjusted_yaw_rate_setpoint';
+info.MatPath{9} = 'pid_yaw_integral';
+info.MatPath{10} = 'pid_yaw_rate_integral';
+info.MatPath{11} = 'pid_throttle_integral';

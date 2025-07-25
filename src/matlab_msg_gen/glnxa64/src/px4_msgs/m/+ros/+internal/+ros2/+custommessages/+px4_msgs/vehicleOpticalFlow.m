@@ -1,0 +1,34 @@
+function [data, info] = vehicleOpticalFlow
+%VehicleOpticalFlow gives an empty data for px4_msgs/VehicleOpticalFlow
+% Copyright 2019-2021 The MathWorks, Inc.
+data = struct();
+data.MessageType = 'px4_msgs/VehicleOpticalFlow';
+[data.timestamp, info.timestamp] = ros.internal.ros2.messages.ros2.default_type('uint64',1,0);
+[data.timestamp_sample, info.timestamp_sample] = ros.internal.ros2.messages.ros2.default_type('uint64',1,0);
+[data.device_id, info.device_id] = ros.internal.ros2.messages.ros2.default_type('uint32',1,0);
+[data.pixel_flow, info.pixel_flow] = ros.internal.ros2.messages.ros2.default_type('single',2,0);
+[data.delta_angle, info.delta_angle] = ros.internal.ros2.messages.ros2.default_type('single',3,0);
+[data.distance_m, info.distance_m] = ros.internal.ros2.messages.ros2.default_type('single',1,0);
+[data.integration_timespan_us, info.integration_timespan_us] = ros.internal.ros2.messages.ros2.default_type('uint32',1,0);
+[data.quality, info.quality] = ros.internal.ros2.messages.ros2.default_type('uint8',1,0);
+[data.max_flow_rate, info.max_flow_rate] = ros.internal.ros2.messages.ros2.default_type('single',1,0);
+[data.min_ground_distance, info.min_ground_distance] = ros.internal.ros2.messages.ros2.default_type('single',1,0);
+[data.max_ground_distance, info.max_ground_distance] = ros.internal.ros2.messages.ros2.default_type('single',1,0);
+info.MessageType = 'px4_msgs/VehicleOpticalFlow';
+info.constant = 0;
+info.default = 0;
+info.maxstrlen = NaN;
+info.MaxLen = 1;
+info.MinLen = 1;
+info.MatPath = cell(1,11);
+info.MatPath{1} = 'timestamp';
+info.MatPath{2} = 'timestamp_sample';
+info.MatPath{3} = 'device_id';
+info.MatPath{4} = 'pixel_flow';
+info.MatPath{5} = 'delta_angle';
+info.MatPath{6} = 'distance_m';
+info.MatPath{7} = 'integration_timespan_us';
+info.MatPath{8} = 'quality';
+info.MatPath{9} = 'max_flow_rate';
+info.MatPath{10} = 'min_ground_distance';
+info.MatPath{11} = 'max_ground_distance';

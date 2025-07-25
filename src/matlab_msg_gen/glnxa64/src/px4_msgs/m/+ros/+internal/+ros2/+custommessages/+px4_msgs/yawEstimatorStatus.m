@@ -1,0 +1,30 @@
+function [data, info] = yawEstimatorStatus
+%YawEstimatorStatus gives an empty data for px4_msgs/YawEstimatorStatus
+% Copyright 2019-2021 The MathWorks, Inc.
+data = struct();
+data.MessageType = 'px4_msgs/YawEstimatorStatus';
+[data.timestamp, info.timestamp] = ros.internal.ros2.messages.ros2.default_type('uint64',1,0);
+[data.timestamp_sample, info.timestamp_sample] = ros.internal.ros2.messages.ros2.default_type('uint64',1,0);
+[data.yaw_composite, info.yaw_composite] = ros.internal.ros2.messages.ros2.default_type('single',1,0);
+[data.yaw_variance, info.yaw_variance] = ros.internal.ros2.messages.ros2.default_type('single',1,0);
+[data.yaw_composite_valid, info.yaw_composite_valid] = ros.internal.ros2.messages.ros2.default_type('logical',1,0);
+[data.yaw, info.yaw] = ros.internal.ros2.messages.ros2.default_type('single',5,0);
+[data.innov_vn, info.innov_vn] = ros.internal.ros2.messages.ros2.default_type('single',5,0);
+[data.innov_ve, info.innov_ve] = ros.internal.ros2.messages.ros2.default_type('single',5,0);
+[data.weight, info.weight] = ros.internal.ros2.messages.ros2.default_type('single',5,0);
+info.MessageType = 'px4_msgs/YawEstimatorStatus';
+info.constant = 0;
+info.default = 0;
+info.maxstrlen = NaN;
+info.MaxLen = 1;
+info.MinLen = 1;
+info.MatPath = cell(1,9);
+info.MatPath{1} = 'timestamp';
+info.MatPath{2} = 'timestamp_sample';
+info.MatPath{3} = 'yaw_composite';
+info.MatPath{4} = 'yaw_variance';
+info.MatPath{5} = 'yaw_composite_valid';
+info.MatPath{6} = 'yaw';
+info.MatPath{7} = 'innov_vn';
+info.MatPath{8} = 'innov_ve';
+info.MatPath{9} = 'weight';

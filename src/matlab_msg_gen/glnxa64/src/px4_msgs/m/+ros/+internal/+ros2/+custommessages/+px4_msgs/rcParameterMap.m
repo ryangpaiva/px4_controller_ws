@@ -1,0 +1,32 @@
+function [data, info] = rcParameterMap
+%RcParameterMap gives an empty data for px4_msgs/RcParameterMap
+% Copyright 2019-2021 The MathWorks, Inc.
+data = struct();
+data.MessageType = 'px4_msgs/RcParameterMap';
+[data.timestamp, info.timestamp] = ros.internal.ros2.messages.ros2.default_type('uint64',1,0);
+[data.RC_PARAM_MAP_NCHAN, info.RC_PARAM_MAP_NCHAN] = ros.internal.ros2.messages.ros2.default_type('uint8',1,0, 3, [NaN]);
+[data.PARAM_ID_LEN, info.PARAM_ID_LEN] = ros.internal.ros2.messages.ros2.default_type('uint8',1,0, 16, [NaN]);
+[data.valid, info.valid] = ros.internal.ros2.messages.ros2.default_type('logical',3,0);
+[data.param_index, info.param_index] = ros.internal.ros2.messages.ros2.default_type('int32',3,0);
+[data.param_id, info.param_id] = ros.internal.ros2.messages.ros2.char('char',51,NaN,0);
+[data.scale, info.scale] = ros.internal.ros2.messages.ros2.default_type('single',3,0);
+[data.value0, info.value0] = ros.internal.ros2.messages.ros2.default_type('single',3,0);
+[data.value_min, info.value_min] = ros.internal.ros2.messages.ros2.default_type('single',3,0);
+[data.value_max, info.value_max] = ros.internal.ros2.messages.ros2.default_type('single',3,0);
+info.MessageType = 'px4_msgs/RcParameterMap';
+info.constant = 0;
+info.default = 0;
+info.maxstrlen = NaN;
+info.MaxLen = 1;
+info.MinLen = 1;
+info.MatPath = cell(1,10);
+info.MatPath{1} = 'timestamp';
+info.MatPath{2} = 'RC_PARAM_MAP_NCHAN';
+info.MatPath{3} = 'PARAM_ID_LEN';
+info.MatPath{4} = 'valid';
+info.MatPath{5} = 'param_index';
+info.MatPath{6} = 'param_id';
+info.MatPath{7} = 'scale';
+info.MatPath{8} = 'value0';
+info.MatPath{9} = 'value_min';
+info.MatPath{10} = 'value_max';

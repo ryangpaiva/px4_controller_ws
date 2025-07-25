@@ -1,0 +1,34 @@
+function [data, info] = vehicleOpticalFlowVel
+%VehicleOpticalFlowVel gives an empty data for px4_msgs/VehicleOpticalFlowVel
+% Copyright 2019-2021 The MathWorks, Inc.
+data = struct();
+data.MessageType = 'px4_msgs/VehicleOpticalFlowVel';
+[data.timestamp, info.timestamp] = ros.internal.ros2.messages.ros2.default_type('uint64',1,0);
+[data.timestamp_sample, info.timestamp_sample] = ros.internal.ros2.messages.ros2.default_type('uint64',1,0);
+[data.vel_body, info.vel_body] = ros.internal.ros2.messages.ros2.default_type('single',2,0);
+[data.vel_ne, info.vel_ne] = ros.internal.ros2.messages.ros2.default_type('single',2,0);
+[data.vel_body_filtered, info.vel_body_filtered] = ros.internal.ros2.messages.ros2.default_type('single',2,0);
+[data.vel_ne_filtered, info.vel_ne_filtered] = ros.internal.ros2.messages.ros2.default_type('single',2,0);
+[data.flow_rate_uncompensated, info.flow_rate_uncompensated] = ros.internal.ros2.messages.ros2.default_type('single',2,0);
+[data.flow_rate_compensated, info.flow_rate_compensated] = ros.internal.ros2.messages.ros2.default_type('single',2,0);
+[data.gyro_rate, info.gyro_rate] = ros.internal.ros2.messages.ros2.default_type('single',3,0);
+[data.gyro_bias, info.gyro_bias] = ros.internal.ros2.messages.ros2.default_type('single',3,0);
+[data.ref_gyro, info.ref_gyro] = ros.internal.ros2.messages.ros2.default_type('single',3,0);
+info.MessageType = 'px4_msgs/VehicleOpticalFlowVel';
+info.constant = 0;
+info.default = 0;
+info.maxstrlen = NaN;
+info.MaxLen = 1;
+info.MinLen = 1;
+info.MatPath = cell(1,11);
+info.MatPath{1} = 'timestamp';
+info.MatPath{2} = 'timestamp_sample';
+info.MatPath{3} = 'vel_body';
+info.MatPath{4} = 'vel_ne';
+info.MatPath{5} = 'vel_body_filtered';
+info.MatPath{6} = 'vel_ne_filtered';
+info.MatPath{7} = 'flow_rate_uncompensated';
+info.MatPath{8} = 'flow_rate_compensated';
+info.MatPath{9} = 'gyro_rate';
+info.MatPath{10} = 'gyro_bias';
+info.MatPath{11} = 'ref_gyro';

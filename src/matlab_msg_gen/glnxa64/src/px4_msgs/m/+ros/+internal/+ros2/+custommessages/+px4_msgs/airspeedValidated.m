@@ -1,0 +1,34 @@
+function [data, info] = airspeedValidated
+%AirspeedValidated gives an empty data for px4_msgs/AirspeedValidated
+% Copyright 2019-2021 The MathWorks, Inc.
+data = struct();
+data.MessageType = 'px4_msgs/AirspeedValidated';
+[data.timestamp, info.timestamp] = ros.internal.ros2.messages.ros2.default_type('uint64',1,0);
+[data.indicated_airspeed_m_s, info.indicated_airspeed_m_s] = ros.internal.ros2.messages.ros2.default_type('single',1,0);
+[data.calibrated_airspeed_m_s, info.calibrated_airspeed_m_s] = ros.internal.ros2.messages.ros2.default_type('single',1,0);
+[data.true_airspeed_m_s, info.true_airspeed_m_s] = ros.internal.ros2.messages.ros2.default_type('single',1,0);
+[data.calibrated_ground_minus_wind_m_s, info.calibrated_ground_minus_wind_m_s] = ros.internal.ros2.messages.ros2.default_type('single',1,0);
+[data.true_ground_minus_wind_m_s, info.true_ground_minus_wind_m_s] = ros.internal.ros2.messages.ros2.default_type('single',1,0);
+[data.airspeed_sensor_measurement_valid, info.airspeed_sensor_measurement_valid] = ros.internal.ros2.messages.ros2.default_type('logical',1,0);
+[data.selected_airspeed_index, info.selected_airspeed_index] = ros.internal.ros2.messages.ros2.default_type('int8',1,0);
+[data.airspeed_derivative_filtered, info.airspeed_derivative_filtered] = ros.internal.ros2.messages.ros2.default_type('single',1,0);
+[data.throttle_filtered, info.throttle_filtered] = ros.internal.ros2.messages.ros2.default_type('single',1,0);
+[data.pitch_filtered, info.pitch_filtered] = ros.internal.ros2.messages.ros2.default_type('single',1,0);
+info.MessageType = 'px4_msgs/AirspeedValidated';
+info.constant = 0;
+info.default = 0;
+info.maxstrlen = NaN;
+info.MaxLen = 1;
+info.MinLen = 1;
+info.MatPath = cell(1,11);
+info.MatPath{1} = 'timestamp';
+info.MatPath{2} = 'indicated_airspeed_m_s';
+info.MatPath{3} = 'calibrated_airspeed_m_s';
+info.MatPath{4} = 'true_airspeed_m_s';
+info.MatPath{5} = 'calibrated_ground_minus_wind_m_s';
+info.MatPath{6} = 'true_ground_minus_wind_m_s';
+info.MatPath{7} = 'airspeed_sensor_measurement_valid';
+info.MatPath{8} = 'selected_airspeed_index';
+info.MatPath{9} = 'airspeed_derivative_filtered';
+info.MatPath{10} = 'throttle_filtered';
+info.MatPath{11} = 'pitch_filtered';

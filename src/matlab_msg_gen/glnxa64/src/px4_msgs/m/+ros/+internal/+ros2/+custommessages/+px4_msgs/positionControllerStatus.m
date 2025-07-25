@@ -1,0 +1,34 @@
+function [data, info] = positionControllerStatus
+%PositionControllerStatus gives an empty data for px4_msgs/PositionControllerStatus
+% Copyright 2019-2021 The MathWorks, Inc.
+data = struct();
+data.MessageType = 'px4_msgs/PositionControllerStatus';
+[data.timestamp, info.timestamp] = ros.internal.ros2.messages.ros2.default_type('uint64',1,0);
+[data.nav_roll, info.nav_roll] = ros.internal.ros2.messages.ros2.default_type('single',1,0);
+[data.nav_pitch, info.nav_pitch] = ros.internal.ros2.messages.ros2.default_type('single',1,0);
+[data.nav_bearing, info.nav_bearing] = ros.internal.ros2.messages.ros2.default_type('single',1,0);
+[data.target_bearing, info.target_bearing] = ros.internal.ros2.messages.ros2.default_type('single',1,0);
+[data.xtrack_error, info.xtrack_error] = ros.internal.ros2.messages.ros2.default_type('single',1,0);
+[data.wp_dist, info.wp_dist] = ros.internal.ros2.messages.ros2.default_type('single',1,0);
+[data.acceptance_radius, info.acceptance_radius] = ros.internal.ros2.messages.ros2.default_type('single',1,0);
+[data.yaw_acceptance, info.yaw_acceptance] = ros.internal.ros2.messages.ros2.default_type('single',1,0);
+[data.altitude_acceptance, info.altitude_acceptance] = ros.internal.ros2.messages.ros2.default_type('single',1,0);
+[data.type, info.type] = ros.internal.ros2.messages.ros2.default_type('uint8',1,0);
+info.MessageType = 'px4_msgs/PositionControllerStatus';
+info.constant = 0;
+info.default = 0;
+info.maxstrlen = NaN;
+info.MaxLen = 1;
+info.MinLen = 1;
+info.MatPath = cell(1,11);
+info.MatPath{1} = 'timestamp';
+info.MatPath{2} = 'nav_roll';
+info.MatPath{3} = 'nav_pitch';
+info.MatPath{4} = 'nav_bearing';
+info.MatPath{5} = 'target_bearing';
+info.MatPath{6} = 'xtrack_error';
+info.MatPath{7} = 'wp_dist';
+info.MatPath{8} = 'acceptance_radius';
+info.MatPath{9} = 'yaw_acceptance';
+info.MatPath{10} = 'altitude_acceptance';
+info.MatPath{11} = 'type';

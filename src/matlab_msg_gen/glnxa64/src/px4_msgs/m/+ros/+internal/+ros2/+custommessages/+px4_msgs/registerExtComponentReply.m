@@ -1,0 +1,32 @@
+function [data, info] = registerExtComponentReply
+%RegisterExtComponentReply gives an empty data for px4_msgs/RegisterExtComponentReply
+% Copyright 2019-2021 The MathWorks, Inc.
+data = struct();
+data.MessageType = 'px4_msgs/RegisterExtComponentReply';
+[data.MESSAGE_VERSION, info.MESSAGE_VERSION] = ros.internal.ros2.messages.ros2.default_type('uint32',1,0, 0, [NaN]);
+[data.timestamp, info.timestamp] = ros.internal.ros2.messages.ros2.default_type('uint64',1,0);
+[data.request_id, info.request_id] = ros.internal.ros2.messages.ros2.default_type('uint64',1,0);
+[data.name, info.name] = ros.internal.ros2.messages.ros2.char('char',25,NaN,0);
+[data.px4_ros2_api_version, info.px4_ros2_api_version] = ros.internal.ros2.messages.ros2.default_type('uint16',1,0);
+[data.success, info.success] = ros.internal.ros2.messages.ros2.default_type('logical',1,0);
+[data.arming_check_id, info.arming_check_id] = ros.internal.ros2.messages.ros2.default_type('int8',1,0);
+[data.mode_id, info.mode_id] = ros.internal.ros2.messages.ros2.default_type('int8',1,0);
+[data.mode_executor_id, info.mode_executor_id] = ros.internal.ros2.messages.ros2.default_type('int8',1,0);
+[data.ORB_QUEUE_LENGTH, info.ORB_QUEUE_LENGTH] = ros.internal.ros2.messages.ros2.default_type('uint8',1,0, 2, [NaN]);
+info.MessageType = 'px4_msgs/RegisterExtComponentReply';
+info.constant = 0;
+info.default = 0;
+info.maxstrlen = NaN;
+info.MaxLen = 1;
+info.MinLen = 1;
+info.MatPath = cell(1,10);
+info.MatPath{1} = 'MESSAGE_VERSION';
+info.MatPath{2} = 'timestamp';
+info.MatPath{3} = 'request_id';
+info.MatPath{4} = 'name';
+info.MatPath{5} = 'px4_ros2_api_version';
+info.MatPath{6} = 'success';
+info.MatPath{7} = 'arming_check_id';
+info.MatPath{8} = 'mode_id';
+info.MatPath{9} = 'mode_executor_id';
+info.MatPath{10} = 'ORB_QUEUE_LENGTH';

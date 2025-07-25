@@ -1,0 +1,34 @@
+function [data, info] = gotoSetpoint
+%GotoSetpoint gives an empty data for px4_msgs/GotoSetpoint
+% Copyright 2019-2021 The MathWorks, Inc.
+data = struct();
+data.MessageType = 'px4_msgs/GotoSetpoint';
+[data.MESSAGE_VERSION, info.MESSAGE_VERSION] = ros.internal.ros2.messages.ros2.default_type('uint32',1,0, 0, [NaN]);
+[data.timestamp, info.timestamp] = ros.internal.ros2.messages.ros2.default_type('uint64',1,0);
+[data.position, info.position] = ros.internal.ros2.messages.ros2.default_type('single',3,0);
+[data.flag_control_heading, info.flag_control_heading] = ros.internal.ros2.messages.ros2.default_type('logical',1,0);
+[data.heading, info.heading] = ros.internal.ros2.messages.ros2.default_type('single',1,0);
+[data.flag_set_max_horizontal_speed, info.flag_set_max_horizontal_speed] = ros.internal.ros2.messages.ros2.default_type('logical',1,0);
+[data.max_horizontal_speed, info.max_horizontal_speed] = ros.internal.ros2.messages.ros2.default_type('single',1,0);
+[data.flag_set_max_vertical_speed, info.flag_set_max_vertical_speed] = ros.internal.ros2.messages.ros2.default_type('logical',1,0);
+[data.max_vertical_speed, info.max_vertical_speed] = ros.internal.ros2.messages.ros2.default_type('single',1,0);
+[data.flag_set_max_heading_rate, info.flag_set_max_heading_rate] = ros.internal.ros2.messages.ros2.default_type('logical',1,0);
+[data.max_heading_rate, info.max_heading_rate] = ros.internal.ros2.messages.ros2.default_type('single',1,0);
+info.MessageType = 'px4_msgs/GotoSetpoint';
+info.constant = 0;
+info.default = 0;
+info.maxstrlen = NaN;
+info.MaxLen = 1;
+info.MinLen = 1;
+info.MatPath = cell(1,11);
+info.MatPath{1} = 'MESSAGE_VERSION';
+info.MatPath{2} = 'timestamp';
+info.MatPath{3} = 'position';
+info.MatPath{4} = 'flag_control_heading';
+info.MatPath{5} = 'heading';
+info.MatPath{6} = 'flag_set_max_horizontal_speed';
+info.MatPath{7} = 'max_horizontal_speed';
+info.MatPath{8} = 'flag_set_max_vertical_speed';
+info.MatPath{9} = 'max_vertical_speed';
+info.MatPath{10} = 'flag_set_max_heading_rate';
+info.MatPath{11} = 'max_heading_rate';

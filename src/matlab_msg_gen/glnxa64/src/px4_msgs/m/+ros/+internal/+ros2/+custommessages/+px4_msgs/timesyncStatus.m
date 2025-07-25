@@ -1,0 +1,30 @@
+function [data, info] = timesyncStatus
+%TimesyncStatus gives an empty data for px4_msgs/TimesyncStatus
+% Copyright 2019-2021 The MathWorks, Inc.
+data = struct();
+data.MessageType = 'px4_msgs/TimesyncStatus';
+[data.timestamp, info.timestamp] = ros.internal.ros2.messages.ros2.default_type('uint64',1,0);
+[data.SOURCE_PROTOCOL_UNKNOWN, info.SOURCE_PROTOCOL_UNKNOWN] = ros.internal.ros2.messages.ros2.default_type('uint8',1,0, 0, [NaN]);
+[data.SOURCE_PROTOCOL_MAVLINK, info.SOURCE_PROTOCOL_MAVLINK] = ros.internal.ros2.messages.ros2.default_type('uint8',1,0, 1, [NaN]);
+[data.SOURCE_PROTOCOL_DDS, info.SOURCE_PROTOCOL_DDS] = ros.internal.ros2.messages.ros2.default_type('uint8',1,0, 2, [NaN]);
+[data.source_protocol, info.source_protocol] = ros.internal.ros2.messages.ros2.default_type('uint8',1,0);
+[data.remote_timestamp, info.remote_timestamp] = ros.internal.ros2.messages.ros2.default_type('uint64',1,0);
+[data.observed_offset, info.observed_offset] = ros.internal.ros2.messages.ros2.default_type('int64',1,0);
+[data.estimated_offset, info.estimated_offset] = ros.internal.ros2.messages.ros2.default_type('int64',1,0);
+[data.round_trip_time, info.round_trip_time] = ros.internal.ros2.messages.ros2.default_type('uint32',1,0);
+info.MessageType = 'px4_msgs/TimesyncStatus';
+info.constant = 0;
+info.default = 0;
+info.maxstrlen = NaN;
+info.MaxLen = 1;
+info.MinLen = 1;
+info.MatPath = cell(1,9);
+info.MatPath{1} = 'timestamp';
+info.MatPath{2} = 'SOURCE_PROTOCOL_UNKNOWN';
+info.MatPath{3} = 'SOURCE_PROTOCOL_MAVLINK';
+info.MatPath{4} = 'SOURCE_PROTOCOL_DDS';
+info.MatPath{5} = 'source_protocol';
+info.MatPath{6} = 'remote_timestamp';
+info.MatPath{7} = 'observed_offset';
+info.MatPath{8} = 'estimated_offset';
+info.MatPath{9} = 'round_trip_time';

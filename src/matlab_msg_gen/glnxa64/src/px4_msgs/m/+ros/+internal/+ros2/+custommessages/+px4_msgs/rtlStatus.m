@@ -1,0 +1,34 @@
+function [data, info] = rtlStatus
+%RtlStatus gives an empty data for px4_msgs/RtlStatus
+% Copyright 2019-2021 The MathWorks, Inc.
+data = struct();
+data.MessageType = 'px4_msgs/RtlStatus';
+[data.timestamp, info.timestamp] = ros.internal.ros2.messages.ros2.default_type('uint64',1,0);
+[data.safe_points_id, info.safe_points_id] = ros.internal.ros2.messages.ros2.default_type('uint32',1,0);
+[data.is_evaluation_pending, info.is_evaluation_pending] = ros.internal.ros2.messages.ros2.default_type('logical',1,0);
+[data.has_vtol_approach, info.has_vtol_approach] = ros.internal.ros2.messages.ros2.default_type('logical',1,0);
+[data.rtl_type, info.rtl_type] = ros.internal.ros2.messages.ros2.default_type('uint8',1,0);
+[data.safe_point_index, info.safe_point_index] = ros.internal.ros2.messages.ros2.default_type('uint8',1,0);
+[data.RTL_STATUS_TYPE_NONE, info.RTL_STATUS_TYPE_NONE] = ros.internal.ros2.messages.ros2.default_type('uint8',1,0, 0, [NaN]);
+[data.RTL_STATUS_TYPE_DIRECT_SAFE_POINT, info.RTL_STATUS_TYPE_DIRECT_SAFE_POINT] = ros.internal.ros2.messages.ros2.default_type('uint8',1,0, 1, [NaN]);
+[data.RTL_STATUS_TYPE_DIRECT_MISSION_LAND, info.RTL_STATUS_TYPE_DIRECT_MISSION_LAND] = ros.internal.ros2.messages.ros2.default_type('uint8',1,0, 2, [NaN]);
+[data.RTL_STATUS_TYPE_FOLLOW_MISSION, info.RTL_STATUS_TYPE_FOLLOW_MISSION] = ros.internal.ros2.messages.ros2.default_type('uint8',1,0, 3, [NaN]);
+[data.RTL_STATUS_TYPE_FOLLOW_MISSION_REVERSE, info.RTL_STATUS_TYPE_FOLLOW_MISSION_REVERSE] = ros.internal.ros2.messages.ros2.default_type('uint8',1,0, 4, [NaN]);
+info.MessageType = 'px4_msgs/RtlStatus';
+info.constant = 0;
+info.default = 0;
+info.maxstrlen = NaN;
+info.MaxLen = 1;
+info.MinLen = 1;
+info.MatPath = cell(1,11);
+info.MatPath{1} = 'timestamp';
+info.MatPath{2} = 'safe_points_id';
+info.MatPath{3} = 'is_evaluation_pending';
+info.MatPath{4} = 'has_vtol_approach';
+info.MatPath{5} = 'rtl_type';
+info.MatPath{6} = 'safe_point_index';
+info.MatPath{7} = 'RTL_STATUS_TYPE_NONE';
+info.MatPath{8} = 'RTL_STATUS_TYPE_DIRECT_SAFE_POINT';
+info.MatPath{9} = 'RTL_STATUS_TYPE_DIRECT_MISSION_LAND';
+info.MatPath{10} = 'RTL_STATUS_TYPE_FOLLOW_MISSION';
+info.MatPath{11} = 'RTL_STATUS_TYPE_FOLLOW_MISSION_REVERSE';

@@ -1,0 +1,42 @@
+function [data, info] = vehicleTrajectoryBezier
+%VehicleTrajectoryBezier gives an empty data for px4_msgs/VehicleTrajectoryBezier
+% Copyright 2019-2021 The MathWorks, Inc.
+data = struct();
+data.MessageType = 'px4_msgs/VehicleTrajectoryBezier';
+[data.timestamp, info.timestamp] = ros.internal.ros2.messages.ros2.default_type('uint64',1,0);
+[data.POINT_0, info.POINT_0] = ros.internal.ros2.messages.ros2.default_type('uint8',1,0, 0, [NaN]);
+[data.POINT_1, info.POINT_1] = ros.internal.ros2.messages.ros2.default_type('uint8',1,0, 1, [NaN]);
+[data.POINT_2, info.POINT_2] = ros.internal.ros2.messages.ros2.default_type('uint8',1,0, 2, [NaN]);
+[data.POINT_3, info.POINT_3] = ros.internal.ros2.messages.ros2.default_type('uint8',1,0, 3, [NaN]);
+[data.POINT_4, info.POINT_4] = ros.internal.ros2.messages.ros2.default_type('uint8',1,0, 4, [NaN]);
+[data.NUMBER_POINTS, info.NUMBER_POINTS] = ros.internal.ros2.messages.ros2.default_type('uint8',1,0, 5, [NaN]);
+[data.control_points, info.control_points] = ros.internal.ros2.custommessages.px4_msgs.trajectoryBezier;
+info.control_points.MLdataType = 'struct';
+info.control_points.MaxLen = 5;
+info.control_points.MinLen = 5;
+[data.bezier_order, info.bezier_order] = ros.internal.ros2.messages.ros2.default_type('uint8',1,0);
+val = [];
+for i = 1:5
+    val = vertcat(data.control_points,val); %#ok<AGROW>
+end
+data.control_points = val;
+info.MessageType = 'px4_msgs/VehicleTrajectoryBezier';
+info.constant = 0;
+info.default = 0;
+info.maxstrlen = NaN;
+info.MaxLen = 1;
+info.MinLen = 1;
+info.MatPath = cell(1,13);
+info.MatPath{1} = 'timestamp';
+info.MatPath{2} = 'POINT_0';
+info.MatPath{3} = 'POINT_1';
+info.MatPath{4} = 'POINT_2';
+info.MatPath{5} = 'POINT_3';
+info.MatPath{6} = 'POINT_4';
+info.MatPath{7} = 'NUMBER_POINTS';
+info.MatPath{8} = 'control_points';
+info.MatPath{9} = 'control_points.timestamp';
+info.MatPath{10} = 'control_points.position';
+info.MatPath{11} = 'control_points.yaw';
+info.MatPath{12} = 'control_points.delta';
+info.MatPath{13} = 'bezier_order';

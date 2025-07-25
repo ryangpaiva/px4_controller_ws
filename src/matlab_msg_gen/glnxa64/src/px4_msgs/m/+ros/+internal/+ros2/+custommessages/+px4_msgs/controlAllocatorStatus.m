@@ -1,0 +1,36 @@
+function [data, info] = controlAllocatorStatus
+%ControlAllocatorStatus gives an empty data for px4_msgs/ControlAllocatorStatus
+% Copyright 2019-2021 The MathWorks, Inc.
+data = struct();
+data.MessageType = 'px4_msgs/ControlAllocatorStatus';
+[data.timestamp, info.timestamp] = ros.internal.ros2.messages.ros2.default_type('uint64',1,0);
+[data.torque_setpoint_achieved, info.torque_setpoint_achieved] = ros.internal.ros2.messages.ros2.default_type('logical',1,0);
+[data.unallocated_torque, info.unallocated_torque] = ros.internal.ros2.messages.ros2.default_type('single',3,0);
+[data.thrust_setpoint_achieved, info.thrust_setpoint_achieved] = ros.internal.ros2.messages.ros2.default_type('logical',1,0);
+[data.unallocated_thrust, info.unallocated_thrust] = ros.internal.ros2.messages.ros2.default_type('single',3,0);
+[data.ACTUATOR_SATURATION_OK, info.ACTUATOR_SATURATION_OK] = ros.internal.ros2.messages.ros2.default_type('int8',1,0, 0, [NaN]);
+[data.ACTUATOR_SATURATION_UPPER_DYN, info.ACTUATOR_SATURATION_UPPER_DYN] = ros.internal.ros2.messages.ros2.default_type('int8',1,0, 1, [NaN]);
+[data.ACTUATOR_SATURATION_UPPER, info.ACTUATOR_SATURATION_UPPER] = ros.internal.ros2.messages.ros2.default_type('int8',1,0, 2, [NaN]);
+[data.ACTUATOR_SATURATION_LOWER_DYN, info.ACTUATOR_SATURATION_LOWER_DYN] = ros.internal.ros2.messages.ros2.default_type('int8',1,0, -1, [NaN]);
+[data.ACTUATOR_SATURATION_LOWER, info.ACTUATOR_SATURATION_LOWER] = ros.internal.ros2.messages.ros2.default_type('int8',1,0, -2, [NaN]);
+[data.actuator_saturation, info.actuator_saturation] = ros.internal.ros2.messages.ros2.default_type('int8',16,0);
+[data.handled_motor_failure_mask, info.handled_motor_failure_mask] = ros.internal.ros2.messages.ros2.default_type('uint16',1,0);
+info.MessageType = 'px4_msgs/ControlAllocatorStatus';
+info.constant = 0;
+info.default = 0;
+info.maxstrlen = NaN;
+info.MaxLen = 1;
+info.MinLen = 1;
+info.MatPath = cell(1,12);
+info.MatPath{1} = 'timestamp';
+info.MatPath{2} = 'torque_setpoint_achieved';
+info.MatPath{3} = 'unallocated_torque';
+info.MatPath{4} = 'thrust_setpoint_achieved';
+info.MatPath{5} = 'unallocated_thrust';
+info.MatPath{6} = 'ACTUATOR_SATURATION_OK';
+info.MatPath{7} = 'ACTUATOR_SATURATION_UPPER_DYN';
+info.MatPath{8} = 'ACTUATOR_SATURATION_UPPER';
+info.MatPath{9} = 'ACTUATOR_SATURATION_LOWER_DYN';
+info.MatPath{10} = 'ACTUATOR_SATURATION_LOWER';
+info.MatPath{11} = 'actuator_saturation';
+info.MatPath{12} = 'handled_motor_failure_mask';

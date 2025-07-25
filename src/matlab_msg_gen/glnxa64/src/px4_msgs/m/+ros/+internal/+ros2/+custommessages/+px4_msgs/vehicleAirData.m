@@ -1,0 +1,30 @@
+function [data, info] = vehicleAirData
+%VehicleAirData gives an empty data for px4_msgs/VehicleAirData
+% Copyright 2019-2021 The MathWorks, Inc.
+data = struct();
+data.MessageType = 'px4_msgs/VehicleAirData';
+[data.timestamp, info.timestamp] = ros.internal.ros2.messages.ros2.default_type('uint64',1,0);
+[data.timestamp_sample, info.timestamp_sample] = ros.internal.ros2.messages.ros2.default_type('uint64',1,0);
+[data.baro_device_id, info.baro_device_id] = ros.internal.ros2.messages.ros2.default_type('uint32',1,0);
+[data.baro_alt_meter, info.baro_alt_meter] = ros.internal.ros2.messages.ros2.default_type('single',1,0);
+[data.baro_temp_celcius, info.baro_temp_celcius] = ros.internal.ros2.messages.ros2.default_type('single',1,0);
+[data.baro_pressure_pa, info.baro_pressure_pa] = ros.internal.ros2.messages.ros2.default_type('single',1,0);
+[data.rho, info.rho] = ros.internal.ros2.messages.ros2.default_type('single',1,0);
+[data.eas2tas, info.eas2tas] = ros.internal.ros2.messages.ros2.default_type('single',1,0);
+[data.calibration_count, info.calibration_count] = ros.internal.ros2.messages.ros2.default_type('uint8',1,0);
+info.MessageType = 'px4_msgs/VehicleAirData';
+info.constant = 0;
+info.default = 0;
+info.maxstrlen = NaN;
+info.MaxLen = 1;
+info.MinLen = 1;
+info.MatPath = cell(1,9);
+info.MatPath{1} = 'timestamp';
+info.MatPath{2} = 'timestamp_sample';
+info.MatPath{3} = 'baro_device_id';
+info.MatPath{4} = 'baro_alt_meter';
+info.MatPath{5} = 'baro_temp_celcius';
+info.MatPath{6} = 'baro_pressure_pa';
+info.MatPath{7} = 'rho';
+info.MatPath{8} = 'eas2tas';
+info.MatPath{9} = 'calibration_count';

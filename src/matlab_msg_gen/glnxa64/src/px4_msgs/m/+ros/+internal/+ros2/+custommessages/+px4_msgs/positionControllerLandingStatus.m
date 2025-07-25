@@ -1,0 +1,30 @@
+function [data, info] = positionControllerLandingStatus
+%PositionControllerLandingStatus gives an empty data for px4_msgs/PositionControllerLandingStatus
+% Copyright 2019-2021 The MathWorks, Inc.
+data = struct();
+data.MessageType = 'px4_msgs/PositionControllerLandingStatus';
+[data.timestamp, info.timestamp] = ros.internal.ros2.messages.ros2.default_type('uint64',1,0);
+[data.lateral_touchdown_offset, info.lateral_touchdown_offset] = ros.internal.ros2.messages.ros2.default_type('single',1,0);
+[data.flaring, info.flaring] = ros.internal.ros2.messages.ros2.default_type('logical',1,0);
+[data.abort_status, info.abort_status] = ros.internal.ros2.messages.ros2.default_type('uint8',1,0);
+[data.NOT_ABORTED, info.NOT_ABORTED] = ros.internal.ros2.messages.ros2.default_type('uint8',1,0, 0, [NaN]);
+[data.ABORTED_BY_OPERATOR, info.ABORTED_BY_OPERATOR] = ros.internal.ros2.messages.ros2.default_type('uint8',1,0, 1, [NaN]);
+[data.TERRAIN_NOT_FOUND, info.TERRAIN_NOT_FOUND] = ros.internal.ros2.messages.ros2.default_type('uint8',1,0, 2, [NaN]);
+[data.TERRAIN_TIMEOUT, info.TERRAIN_TIMEOUT] = ros.internal.ros2.messages.ros2.default_type('uint8',1,0, 3, [NaN]);
+[data.UNKNOWN_ABORT_CRITERION, info.UNKNOWN_ABORT_CRITERION] = ros.internal.ros2.messages.ros2.default_type('uint8',1,0, 4, [NaN]);
+info.MessageType = 'px4_msgs/PositionControllerLandingStatus';
+info.constant = 0;
+info.default = 0;
+info.maxstrlen = NaN;
+info.MaxLen = 1;
+info.MinLen = 1;
+info.MatPath = cell(1,9);
+info.MatPath{1} = 'timestamp';
+info.MatPath{2} = 'lateral_touchdown_offset';
+info.MatPath{3} = 'flaring';
+info.MatPath{4} = 'abort_status';
+info.MatPath{5} = 'NOT_ABORTED';
+info.MatPath{6} = 'ABORTED_BY_OPERATOR';
+info.MatPath{7} = 'TERRAIN_NOT_FOUND';
+info.MatPath{8} = 'TERRAIN_TIMEOUT';
+info.MatPath{9} = 'UNKNOWN_ABORT_CRITERION';

@@ -1,0 +1,36 @@
+function [data, info] = powerMonitor
+%PowerMonitor gives an empty data for px4_msgs/PowerMonitor
+% Copyright 2019-2021 The MathWorks, Inc.
+data = struct();
+data.MessageType = 'px4_msgs/PowerMonitor';
+[data.timestamp, info.timestamp] = ros.internal.ros2.messages.ros2.default_type('uint64',1,0);
+[data.voltage_v, info.voltage_v] = ros.internal.ros2.messages.ros2.default_type('single',1,0);
+[data.current_a, info.current_a] = ros.internal.ros2.messages.ros2.default_type('single',1,0);
+[data.power_w, info.power_w] = ros.internal.ros2.messages.ros2.default_type('single',1,0);
+[data.rconf, info.rconf] = ros.internal.ros2.messages.ros2.default_type('int16',1,0);
+[data.rsv, info.rsv] = ros.internal.ros2.messages.ros2.default_type('int16',1,0);
+[data.rbv, info.rbv] = ros.internal.ros2.messages.ros2.default_type('int16',1,0);
+[data.rp, info.rp] = ros.internal.ros2.messages.ros2.default_type('int16',1,0);
+[data.rc, info.rc] = ros.internal.ros2.messages.ros2.default_type('int16',1,0);
+[data.rcal, info.rcal] = ros.internal.ros2.messages.ros2.default_type('int16',1,0);
+[data.me, info.me] = ros.internal.ros2.messages.ros2.default_type('int16',1,0);
+[data.al, info.al] = ros.internal.ros2.messages.ros2.default_type('int16',1,0);
+info.MessageType = 'px4_msgs/PowerMonitor';
+info.constant = 0;
+info.default = 0;
+info.maxstrlen = NaN;
+info.MaxLen = 1;
+info.MinLen = 1;
+info.MatPath = cell(1,12);
+info.MatPath{1} = 'timestamp';
+info.MatPath{2} = 'voltage_v';
+info.MatPath{3} = 'current_a';
+info.MatPath{4} = 'power_w';
+info.MatPath{5} = 'rconf';
+info.MatPath{6} = 'rsv';
+info.MatPath{7} = 'rbv';
+info.MatPath{8} = 'rp';
+info.MatPath{9} = 'rc';
+info.MatPath{10} = 'rcal';
+info.MatPath{11} = 'me';
+info.MatPath{12} = 'al';

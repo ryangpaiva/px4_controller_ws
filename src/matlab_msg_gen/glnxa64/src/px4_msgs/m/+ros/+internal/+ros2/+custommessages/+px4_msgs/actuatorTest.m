@@ -1,0 +1,36 @@
+function [data, info] = actuatorTest
+%ActuatorTest gives an empty data for px4_msgs/ActuatorTest
+% Copyright 2019-2021 The MathWorks, Inc.
+data = struct();
+data.MessageType = 'px4_msgs/ActuatorTest';
+[data.timestamp, info.timestamp] = ros.internal.ros2.messages.ros2.default_type('uint64',1,0);
+[data.ACTION_RELEASE_CONTROL, info.ACTION_RELEASE_CONTROL] = ros.internal.ros2.messages.ros2.default_type('uint8',1,0, 0, [NaN]);
+[data.ACTION_DO_CONTROL, info.ACTION_DO_CONTROL] = ros.internal.ros2.messages.ros2.default_type('uint8',1,0, 1, [NaN]);
+[data.FUNCTION_MOTOR1, info.FUNCTION_MOTOR1] = ros.internal.ros2.messages.ros2.default_type('uint8',1,0, 101, [NaN]);
+[data.MAX_NUM_MOTORS, info.MAX_NUM_MOTORS] = ros.internal.ros2.messages.ros2.default_type('uint8',1,0, 12, [NaN]);
+[data.FUNCTION_SERVO1, info.FUNCTION_SERVO1] = ros.internal.ros2.messages.ros2.default_type('uint8',1,0, 201, [NaN]);
+[data.MAX_NUM_SERVOS, info.MAX_NUM_SERVOS] = ros.internal.ros2.messages.ros2.default_type('uint8',1,0, 8, [NaN]);
+[data.action, info.action] = ros.internal.ros2.messages.ros2.default_type('uint8',1,0);
+[data.function, info.function] = ros.internal.ros2.messages.ros2.default_type('uint16',1,0);
+[data.value, info.value] = ros.internal.ros2.messages.ros2.default_type('single',1,0);
+[data.timeout_ms, info.timeout_ms] = ros.internal.ros2.messages.ros2.default_type('uint32',1,0);
+[data.ORB_QUEUE_LENGTH, info.ORB_QUEUE_LENGTH] = ros.internal.ros2.messages.ros2.default_type('uint8',1,0, 16, [NaN]);
+info.MessageType = 'px4_msgs/ActuatorTest';
+info.constant = 0;
+info.default = 0;
+info.maxstrlen = NaN;
+info.MaxLen = 1;
+info.MinLen = 1;
+info.MatPath = cell(1,12);
+info.MatPath{1} = 'timestamp';
+info.MatPath{2} = 'ACTION_RELEASE_CONTROL';
+info.MatPath{3} = 'ACTION_DO_CONTROL';
+info.MatPath{4} = 'FUNCTION_MOTOR1';
+info.MatPath{5} = 'MAX_NUM_MOTORS';
+info.MatPath{6} = 'FUNCTION_SERVO1';
+info.MatPath{7} = 'MAX_NUM_SERVOS';
+info.MatPath{8} = 'action';
+info.MatPath{9} = 'function';
+info.MatPath{10} = 'value';
+info.MatPath{11} = 'timeout_ms';
+info.MatPath{12} = 'ORB_QUEUE_LENGTH';

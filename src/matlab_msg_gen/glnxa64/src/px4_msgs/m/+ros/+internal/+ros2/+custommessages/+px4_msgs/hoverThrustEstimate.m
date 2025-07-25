@@ -1,0 +1,30 @@
+function [data, info] = hoverThrustEstimate
+%HoverThrustEstimate gives an empty data for px4_msgs/HoverThrustEstimate
+% Copyright 2019-2021 The MathWorks, Inc.
+data = struct();
+data.MessageType = 'px4_msgs/HoverThrustEstimate';
+[data.timestamp, info.timestamp] = ros.internal.ros2.messages.ros2.default_type('uint64',1,0);
+[data.timestamp_sample, info.timestamp_sample] = ros.internal.ros2.messages.ros2.default_type('uint64',1,0);
+[data.hover_thrust, info.hover_thrust] = ros.internal.ros2.messages.ros2.default_type('single',1,0);
+[data.hover_thrust_var, info.hover_thrust_var] = ros.internal.ros2.messages.ros2.default_type('single',1,0);
+[data.accel_innov, info.accel_innov] = ros.internal.ros2.messages.ros2.default_type('single',1,0);
+[data.accel_innov_var, info.accel_innov_var] = ros.internal.ros2.messages.ros2.default_type('single',1,0);
+[data.accel_innov_test_ratio, info.accel_innov_test_ratio] = ros.internal.ros2.messages.ros2.default_type('single',1,0);
+[data.accel_noise_var, info.accel_noise_var] = ros.internal.ros2.messages.ros2.default_type('single',1,0);
+[data.valid, info.valid] = ros.internal.ros2.messages.ros2.default_type('logical',1,0);
+info.MessageType = 'px4_msgs/HoverThrustEstimate';
+info.constant = 0;
+info.default = 0;
+info.maxstrlen = NaN;
+info.MaxLen = 1;
+info.MinLen = 1;
+info.MatPath = cell(1,9);
+info.MatPath{1} = 'timestamp';
+info.MatPath{2} = 'timestamp_sample';
+info.MatPath{3} = 'hover_thrust';
+info.MatPath{4} = 'hover_thrust_var';
+info.MatPath{5} = 'accel_innov';
+info.MatPath{6} = 'accel_innov_var';
+info.MatPath{7} = 'accel_innov_test_ratio';
+info.MatPath{8} = 'accel_noise_var';
+info.MatPath{9} = 'valid';

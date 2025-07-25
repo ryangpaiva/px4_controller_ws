@@ -1,0 +1,34 @@
+function [data, info] = failureDetectorStatus
+%FailureDetectorStatus gives an empty data for px4_msgs/FailureDetectorStatus
+% Copyright 2019-2021 The MathWorks, Inc.
+data = struct();
+data.MessageType = 'px4_msgs/FailureDetectorStatus';
+[data.timestamp, info.timestamp] = ros.internal.ros2.messages.ros2.default_type('uint64',1,0);
+[data.fd_roll, info.fd_roll] = ros.internal.ros2.messages.ros2.default_type('logical',1,0);
+[data.fd_pitch, info.fd_pitch] = ros.internal.ros2.messages.ros2.default_type('logical',1,0);
+[data.fd_alt, info.fd_alt] = ros.internal.ros2.messages.ros2.default_type('logical',1,0);
+[data.fd_ext, info.fd_ext] = ros.internal.ros2.messages.ros2.default_type('logical',1,0);
+[data.fd_arm_escs, info.fd_arm_escs] = ros.internal.ros2.messages.ros2.default_type('logical',1,0);
+[data.fd_battery, info.fd_battery] = ros.internal.ros2.messages.ros2.default_type('logical',1,0);
+[data.fd_imbalanced_prop, info.fd_imbalanced_prop] = ros.internal.ros2.messages.ros2.default_type('logical',1,0);
+[data.fd_motor, info.fd_motor] = ros.internal.ros2.messages.ros2.default_type('logical',1,0);
+[data.imbalanced_prop_metric, info.imbalanced_prop_metric] = ros.internal.ros2.messages.ros2.default_type('single',1,0);
+[data.motor_failure_mask, info.motor_failure_mask] = ros.internal.ros2.messages.ros2.default_type('uint16',1,0);
+info.MessageType = 'px4_msgs/FailureDetectorStatus';
+info.constant = 0;
+info.default = 0;
+info.maxstrlen = NaN;
+info.MaxLen = 1;
+info.MinLen = 1;
+info.MatPath = cell(1,11);
+info.MatPath{1} = 'timestamp';
+info.MatPath{2} = 'fd_roll';
+info.MatPath{3} = 'fd_pitch';
+info.MatPath{4} = 'fd_alt';
+info.MatPath{5} = 'fd_ext';
+info.MatPath{6} = 'fd_arm_escs';
+info.MatPath{7} = 'fd_battery';
+info.MatPath{8} = 'fd_imbalanced_prop';
+info.MatPath{9} = 'fd_motor';
+info.MatPath{10} = 'imbalanced_prop_metric';
+info.MatPath{11} = 'motor_failure_mask';

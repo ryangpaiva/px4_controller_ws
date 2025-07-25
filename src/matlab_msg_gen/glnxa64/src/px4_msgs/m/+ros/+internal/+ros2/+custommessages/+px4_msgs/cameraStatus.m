@@ -1,0 +1,18 @@
+function [data, info] = cameraStatus
+%CameraStatus gives an empty data for px4_msgs/CameraStatus
+% Copyright 2019-2021 The MathWorks, Inc.
+data = struct();
+data.MessageType = 'px4_msgs/CameraStatus';
+[data.timestamp, info.timestamp] = ros.internal.ros2.messages.ros2.default_type('uint64',1,0);
+[data.active_sys_id, info.active_sys_id] = ros.internal.ros2.messages.ros2.default_type('uint8',1,0);
+[data.active_comp_id, info.active_comp_id] = ros.internal.ros2.messages.ros2.default_type('uint8',1,0);
+info.MessageType = 'px4_msgs/CameraStatus';
+info.constant = 0;
+info.default = 0;
+info.maxstrlen = NaN;
+info.MaxLen = 1;
+info.MinLen = 1;
+info.MatPath = cell(1,3);
+info.MatPath{1} = 'timestamp';
+info.MatPath{2} = 'active_sys_id';
+info.MatPath{3} = 'active_comp_id';
